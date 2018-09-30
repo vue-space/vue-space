@@ -1,26 +1,46 @@
-# vue-space
+<div align="center" markdown="1">
 
-## Project setup
-```
-npm install
-```
+<!-- <img src="./logo.png" alt="vue" width="300"> -->
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<h1>vue-space</h1>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+**This project is under active development**
 
-### Run your tests
-```
-npm run test
-```
+</div>
 
-### Lints and fixes files
-```
-npm run lint
-```
+### UI components
+
+- [ ] Menu `active`
+- [ ] Button `active`
+- [ ] List `active`
+- [ ] AppBar `active`
+- [ ] Alert
+- [ ] Avatar
+- [ ] Badge
+- [ ] Card
+- [ ] Carousel
+- [ ] Chip
+- [ ] Dialogs
+- [ ] Table
+- [ ] Divider
+- [ ] Image
+- [ ] Expansion panel
+- [ ] Dialogs
+- [ ] Parallax
+- [ ] Progress
+- [ ] Rating
+- [ ] Tooltips
+- [ ] Toolbars
+- [ ] Snackbar
+- [ ] Tabs
+
+### Layout
+
+- [ ] Grid
+- [ ] Footer
+
+### Fature
+
+- [ ] Themes
+- [ ] i18n
+- [ ] Typescript

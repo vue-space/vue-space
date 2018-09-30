@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>vue-space - A simple vue ui framework</title>
@@ -8,16 +9,27 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
+
 <body>
   <div id="app"></div>
   <script>
+    var jsResources = '<scr' + 'ipt src="//unpkg.com/vue/dist/vue.js"></scr' + 'ipt>'
+    var cssResources = '@import url("//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");'
+    var bootCode = 'var globalVariable = "leon"'
+    var globalVariable = "leon"
+
     window.$docsify = {
       name: 'vue-space',
       coverpage: true,
       repo: '',
-      extraExts: ['md']
+      extraExts: ['md'],
+      plugins: [
+        DemoBoxVue.create(jsResources, cssResources, bootCode)
+      ]
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify-demo-box-vue@{version}/dist/docsify-demo-box-vue.min.js"></script>
 </body>
+
 </html>
