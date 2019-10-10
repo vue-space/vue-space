@@ -1,53 +1,59 @@
+import { html } from "./utils/editor";
+
 // eslint-disable-next-line no-console
-const log = () => console.log('Welcome to storybook!');
+const log = () => console.log("Welcome to storybook!");
 
 export default {
-  name: 'welcome',
+  name: "welcome",
 
   props: {
     showApp: {
       type: Function,
-      default: log,
-    },
+      default: log
+    }
   },
 
+  /**
+   * @returns {object} main 返回值
+   */
   data() {
     return {
       main: {
         padding: 15,
         lineHeight: 1.4,
-        fontFamily: '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
-        backgroundColor: '#ffffff',
+        fontFamily:
+          '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
+        backgroundColor: "#ffffff"
       },
 
       logo: {
-        width: 200,
+        width: 200
       },
 
       link: {
-        color: '#1474f3',
-        textDecoration: 'none',
-        borderBottom: '1px solid #1474f3',
-        paddingBottom: 2,
+        color: "#1474f3",
+        textDecoration: "none",
+        borderBottom: "1px solid #1474f3",
+        paddingBottom: 2
       },
 
       code: {
         fontSize: 15,
         fontWeight: 600,
-        padding: '2px 5px',
-        border: '1px solid #eae9e9',
+        padding: "2px 5px",
+        border: "1px solid #eae9e9",
         borderRadius: 4,
-        backgroundColor: '#f3f2f2',
-        color: '#3a3a3a',
+        backgroundColor: "#f3f2f2",
+        color: "#3a3a3a"
       },
 
       note: {
-        opacity: 0.5,
-      },
+        opacity: 0.5
+      }
     };
   },
 
-  template: `
+  template: html`
     <div :style="main">
       <h1>Welcome to STORYBOOK</h1>
       <p>
@@ -60,15 +66,15 @@ export default {
         <br />
         directory.
         <br />
-        A story is a single state of one or more UI components. You can have as many stories as
-        you want.
+        A story is a single state of one or more UI components. You can have as
+        many stories as you want.
         <br />
         (Basically a story is like a visual test case.)
       </p>
       <p>
         See these sample
         <br />
-        <a :style="link" @click="onClick" role="button" tabIndex="0">stories</a>
+        <a :style="link" @click="onClick" role="button" tabindex="0">stories</a>
         <br />
         for a component called
         <br />
@@ -80,8 +86,8 @@ export default {
         <br />
         You can also edit those components and see changes right away.
         <br />
-        (Try editing the <code :style="code">Button</code> component
-        located at <code :style="code">src/stories/Button.js</code>.)
+        (Try editing the <code :style="code">Button</code> component located at
+        <code :style="code">src/stories/Button.js</code>.)
       </p>
       <p>
         This is just one thing you can do with Storybook.
@@ -106,8 +112,7 @@ export default {
         <br />
         <code :style="code">.storybook/webpack.config.js</code>
         <br />
-        to add webpack
-        loaders and plugins you are using in this project.
+        to add webpack loaders and plugins you are using in this project.
       </p>
     </div>
   `,
@@ -116,6 +121,6 @@ export default {
     onClick(event) {
       event.preventDefault();
       this.showApp();
-    },
-  },
+    }
+  }
 };

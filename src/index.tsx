@@ -1,4 +1,4 @@
-import "./index.scss";
+// import "./index.scss";
 
 import Vue from "vue";
 import { createComponent } from "@vue/composition-api";

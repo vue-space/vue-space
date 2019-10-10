@@ -6,9 +6,10 @@
   "web": "dist/vue-space.js",
   "scripts": {
     "build": "rollup -c ./rollup.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006 --debug-webpack",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint:fix": "eslint --fix ./{src,stories}/**/*.{tsx,ts,js}",
+    "commit": "git-cz"
   },
   "author": "",
   "license": "MIT",
@@ -19,22 +20,24 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-typescript": "^7.6.0",
-    "@storybook/addon-actions": "^5.2.1",
-    "@storybook/addon-links": "^5.2.1",
-    "@storybook/addon-storysource": "^5.2.1",
-    "@storybook/addons": "^5.2.1",
-    "@storybook/vue": "^5.2.1",
-    "@typescript-eslint/eslint-plugin": "^2.3.1",
-    "@typescript-eslint/parser": "^2.3.1",
+    "@storybook/addon-actions": "^5.2.3",
+    "@storybook/addon-links": "^5.2.3",
+    "@storybook/addon-storysource": "^5.2.3",
+    "@storybook/addons": "^5.2.3",
+    "@storybook/vue": "^5.2.3",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
+    "commitizen": "^4.0.3",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.8",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
     "postcss-import": "^12.0.1",
@@ -59,5 +62,15 @@
   },
   "peerDependencies": {
     "vue": "^2.6.10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix"
+    }
   }
 }

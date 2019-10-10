@@ -1,7 +1,8 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "stories/**/*.js"],
   "compilerOptions": {
     "lib": ["dom", "es6", "es2015.promise"],
+    "allowJs": true,
     "sourceMap": true,
     "strict": true,
     "module": "esnext",
