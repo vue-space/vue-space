@@ -1,33 +1,56 @@
-import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
 import { html } from "./utils/editor";
-
-import MyButton from "./MyButton";
-import Great from "../src/index";
+import { radios, boolean, withKnobs, text } from "@storybook/addon-knobs";
+import Centered from "@storybook/addon-centered/vue";
+import VsButton from "../src/components/VsButton";
 
 export default {
-  title: "Button"
+  title: "vs-button",
+  component: VsButton,
+  decorators: [withKnobs, Centered]
 };
 
-export const text = () => ({
-  components: { Great },
-  template: "<great />",
-  methods: { action: action("clicked") }
-});
-
-export const jsx = () => ({
-  components: { MyButton },
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  render(h) {
-    return <my-button onClick={this.action}>With JSX</my-button>;
+export const allPropsInteractive = () => ({
+  props: {
+    size: {
+      default: radios(
+        "size",
+        {
+          small: "small",
+          normal: "normal"
+        },
+        "normal"
+      )
+    },
+    type: {
+      default: radios(
+        "type",
+        {
+          primary: "primary",
+          secondary: "secondary",
+          danger: "danger"
+        },
+        "secondary"
+      )
+    },
+    loading: {
+      default: boolean("loading", false)
+    },
+    disabled: {
+      default: boolean("disabled", false)
+    },
+    slotValue: {
+      default: text("slotValue", "default button")
+    }
   },
-  methods: { action: linkTo("clicked") }
-});
-
-export const emoji = () => ({
-  components: { MyButton },
   template: html`
-    <my-button @click="action">😀 😎 👍 💯</my-button>
-  `,
-  methods: { action: action("clicked") }
+    <vs-theme-provider>
+      <vs-button
+        v-bind:size="size"
+        :type="type"
+        :loading="loading"
+        :disabled="disabled"
+        >{{slotValue}}</vs-button
+      >
+    </vs-theme-provider>
+  `
 });

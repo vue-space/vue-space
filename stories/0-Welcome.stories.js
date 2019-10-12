@@ -1,15 +1,13 @@
 import { linkTo } from "@storybook/addon-links";
 import { html } from "./utils/editor";
-import Welcome from "./Welcome";
 
 export default {
   title: "Welcome"
 };
 
 export const toStorybook = () => ({
-  components: { Welcome },
   template: html`
-    <welcome :showApp="action" />
+    <div>yahaha</div>
   `,
   methods: { action: linkTo("Button") }
 });
