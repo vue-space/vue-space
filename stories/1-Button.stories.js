@@ -27,7 +27,8 @@ export const allPropsInteractive = () => ({
         {
           primary: "primary",
           secondary: "secondary",
-          danger: "danger"
+          danger: "danger",
+          "danger-secondary": "danger-secondary"
         },
         "secondary"
       )
