@@ -6,14 +6,13 @@
   border-radius: $button-border-radius;
   cursor: pointer;
   transition: $color-translation;
+  background: transparent;
 
   &:focus {
     outline: none;
   }
 
   &--secondary {
-    padding: $button-default-padding-y - $button-secondary-border-width
-      $button-default-padding-x - $button-secondary-border-width;
     color: $button-secondary-color;
     border: $button-secondary-border-width solid $button-secondary-border-color;
 
@@ -43,8 +42,71 @@
     }
   }
 
+  &--danger {
+    color: $button-danger-color;
+    background: $button-danger-background;
+    border: 0;
+
+    &:hover {
+      background: $button-danger-background--hover;
+    }
+
+    &:active {
+      background: $button-danger-background--active;
+    }
+  }
+
+  &--danger-secondary {
+    color: $button-danger-secondary-color;
+    border: $button-danger-secondary-border-width solid
+      $button-danger-secondary-border-color;
+
+    &:hover {
+      color: $button-danger-secondary-color--hover;
+      background: $button-danger-secondary-background--hover;
+    }
+
+    &:active {
+      background: $button-danger-secondary-background--active;
+      border-color: $button-danger-secondary-background--active;
+    }
+  }
+
+  // default focus
   &--secondary:focus,
   &--primary:focus {
     box-shadow: $default-focus-shadow;
+  }
+
+  // danger focus
+  &--danger:focus,
+  &--danger-secondary:focus {
+    box-shadow: $danger-focus-shadow;
+  }
+
+  // primary style normal size
+  &--primary#{&}--normal,
+  &--danger#{&}--normal {
+    padding: $button-default-padding;
+  }
+
+  // secondary style normal size
+  &--secondary#{&}--normal,
+  &--danger-secondary#{&}--normal {
+    padding: $button-default-padding-y - $button-secondary-border-width
+      $button-default-padding-x - $button-secondary-border-width;
+  }
+
+  // primary style small size
+  &--primary#{&}--small,
+  &--danger#{&}--small {
+    padding: $button-small-padding;
+  }
+
+  // secondary style small size
+  &--secondary#{&}--small,
+  &--danger-secondary#{&}--small {
+    padding: $button-small-padding-y - $button-secondary-border-width
+      $button-small-padding-x - $button-secondary-border-width;
   }
 }

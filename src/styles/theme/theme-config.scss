@@ -12,6 +12,7 @@ $gray-color-list: $gray-list;
    ========================================================================== */
 
 $default-focus-shadow: 0 0 0 3px map-get($primary-color-list, "2");
+$danger-focus-shadow: 0 0 0 3px map-get($danger-color-list, "2");
 $default-font-size: 14px;
 $default-border-size: 2px;
 $small-border-radius: 2px;
@@ -84,6 +85,10 @@ $button-danger-color: $white;
 
 $button-danger-secondary-border-color: map-get($danger-color-list, "7");
 $button-danger-secondary-color: map-get($danger-color-list, "7");
+$button-danger-secondary-border-width: 2px;
+$button-danger-secondary-background--hover: $button-danger-background;
+$button-danger-secondary-background--active: $button-danger-background--active;
+$button-danger-secondary-color--hover: $white;
 
 // [dark-theme]
 $dark-theme-button-danger-secondary-border-color: map-get(

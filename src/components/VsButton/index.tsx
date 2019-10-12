@@ -14,7 +14,7 @@ const VsButton = createComponent({
 
     /**
      * Type of button
-     * @type {"primary"|"secondary"|"danger"}
+     * @type {"primary"|"secondary"|"danger"|"danger-secondary"}
      */
     type: {
       type: String,
