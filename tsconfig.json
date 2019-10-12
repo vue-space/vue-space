@@ -13,6 +13,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "jsxFactory": "h",
-    "types": ["vue"]
+    "typeRoots": ["./src/types"],
+    "types": []
   }
 }

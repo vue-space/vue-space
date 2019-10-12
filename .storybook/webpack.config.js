@@ -8,17 +8,17 @@ module.exports = async ({ config, mode }) => {
   // You can change the configuration based on that.
   // 'PRODUCTION' is used when building the static version of storybook.
 
-  config.module.rules.push({
-    test: /\.stories\.js$/,
-    include: path.resolve(__dirname, "../stories"),
-    loader: require.resolve("@storybook/addon-storysource/loader"),
-    options: {
-      prettierConfig: {
-        parser: "babel" // Remove warnings when loading story source files
-      }
-    },
-    enforce: "pre"
-  });
+  // config.module.rules.push({
+  //   test: /\.stories\.js$/,
+  //   include: path.resolve(__dirname, "../stories"),
+  //   loader: require.resolve("@storybook/addon-storysource/loader"),
+  //   options: {
+  //     prettierConfig: {
+  //       parser: "babel" // Remove warnings when loading story source files
+  //     }
+  //   },
+  //   enforce: "pre"
+  // });
 
   config.module.rules.push({
     test: /\.(s){0,1}css$/,
@@ -44,7 +44,17 @@ module.exports = async ({ config, mode }) => {
       {
         loader: "babel-loader",
         options: {
-          presets: ["@vue/babel-preset-jsx", "@babel/env", "@babel/typescript"],
+          presets: [
+            "vca-jsx",
+            [
+              "@vue/babel-preset-jsx",
+              {
+                injectH: false
+              }
+            ],
+            "@babel/env",
+            "@babel/typescript"
+          ],
           plugins: [
             "@babel/plugin-proposal-numeric-separator",
             "@babel/proposal-class-properties",
