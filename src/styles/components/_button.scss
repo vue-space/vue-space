@@ -1,0 +1,50 @@
+@import "../utils/naming.scss";
+@import "../theme/theme-config.scss";
+
+.#{$prefix}-btn {
+  font-size: $button-font-size;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  transition: $color-translation;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--secondary {
+    padding: $button-default-padding-y - $button-secondary-border-width
+      $button-default-padding-x - $button-secondary-border-width;
+    color: $button-secondary-color;
+    border: $button-secondary-border-width solid $button-secondary-border-color;
+
+    &:hover {
+      color: $button-secondary-color--hover;
+      background: $button-secondary-background--hover;
+    }
+
+    &:active {
+      background: $button-secondary-background--active;
+      border-color: $button-secondary-background--active;
+    }
+  }
+
+  &--primary {
+    padding: $button-default-padding;
+    color: $button-primary-color;
+    background: $button-primary-background;
+    border: 0;
+
+    &:hover {
+      background: $button-primary-background--hover;
+    }
+
+    &:active {
+      background: $button-primary-background--active;
+    }
+  }
+
+  &--secondary:focus,
+  &--primary:focus {
+    box-shadow: $default-focus-shadow;
+  }
+}
