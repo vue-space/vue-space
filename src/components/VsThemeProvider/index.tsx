@@ -1,14 +1,13 @@
-import { createComponent } from "@vue/composition-api";
+import { createComponent, PropType } from "@vue/composition-api";
 import { VNode } from "vue";
 
 const VsThemeProvider = createComponent({
   props: {
     /**
      * Theme
-     * @type {"light"|"dark"}
      */
     theme: {
-      type: String,
+      type: String as PropType<"light" | "dark">,
       default: "light"
     }
   },

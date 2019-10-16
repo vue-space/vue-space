@@ -1,29 +1,47 @@
-import { createComponent } from "@vue/composition-api";
+import { createComponent, PropType } from "@vue/composition-api";
 import { VNode } from "vue";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import VsCircularProgress from "../VsCircularProgress";
 
 const VsButton = createComponent({
   props: {
     /**
      * Size of button
-     * @type {"small"|"normal"}
      */
     size: {
-      type: String,
+      type: String as PropType<"small" | "normal">,
       default: "normal"
     },
 
     /**
      * Type of button
-     * @type {"primary"|"secondary"|"danger"|"danger-secondary"}
      */
-    type: {
-      type: String,
+    variant: {
+      type: String as PropType<
+        "primary" | "secondary" | "danger" | "danger-secondary"
+      >,
       default: "secondary"
     },
 
     /**
+     * Gets the classification and default behavior of the button.
+     */
+    type: {
+      type: String as PropType<HTMLButtonElement["type"]>,
+      default: "button"
+    },
+
+    /**
+     * Specify the HTML tag.
+     * eg: tag = "div"
+     */
+    tag: {
+      type: String as PropType<keyof HTMLElementTagNameMap>,
+      default: "button"
+    },
+
+    /**
      * Is loading
-     * @type {boolean}
      */
     loading: {
       type: Boolean,
@@ -32,26 +50,50 @@ const VsButton = createComponent({
 
     /**
      * Is disabled
-     * @type {boolean}
      */
     disabled: {
+      type: Boolean,
+      default: false
+    },
+
+    /**
+     * span the full width of a parent
+     */
+    block: {
       type: Boolean,
       default: false
     }
   },
   setup(props, ctx) {
     return (): VNode => {
+      const isDisabled = props.disabled || props.loading;
+
+      const classNamePrefix = "vs-btn";
       const classData = {
-        "vs-btn": true,
-        [`vs-btn--${props.size}`]: true,
-        [`vs-btn--${props.type}`]: true,
-        "vs-btn--disabled": props.disabled,
-        "vs-btn--loading": props.loading
+        [classNamePrefix]: true,
+        [`${classNamePrefix}--${props.size}`]: true,
+        [`${classNamePrefix}--${props.variant}`]: true,
+        [`${classNamePrefix}--disabled`]: isDisabled,
+        [`${classNamePrefix}--icon`]: props.loading,
+        [`${classNamePrefix}--block`]: props.block
       };
       return (
-        <button class={classData}>
+        <props.tag
+          class={classData}
+          disabled={isDisabled}
+          type={props.type}
+          {...{ on: ctx.listeners }}
+        >
+          {props.loading && (
+            <VsCircularProgress
+              class={`${classNamePrefix}__icon`}
+              color="currentColor"
+              size="small"
+            />
+          )}
+
           {ctx.slots.default && ctx.slots.default()}
-        </button>
+        </props.tag>
       );
     };
   }
