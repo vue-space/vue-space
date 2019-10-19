@@ -1,74 +1,84 @@
-import { createComponent, PropType } from "@vue/composition-api";
+import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import VsCircularProgress from "../VsCircularProgress";
+import { RouterLinkProps } from "../../types/RouterLinkProps";
+import { ButtonHTMLAttributes } from "../../types/dom";
 
-const VsButton = createComponent({
+const classNamePrefix = "vs-btn";
+
+interface VsButtonProps extends ButtonHTMLAttributes, RouterLinkProps {
+  /**
+   * Size of button
+   */
+  size: "small" | "normal";
+  /**
+   * Type of button
+   */
+  variant: "primary" | "secondary" | "danger" | "danger-secondary";
+  /**
+   * Specify the HTML tag.
+   * eg: tag = "div"
+   */
+  tag: keyof HTMLElementTagNameMap | "router-link";
+  /**
+   * Is loading
+   */
+  loading: boolean;
+  /**
+   * Is disabled
+   */
+  disabled: boolean;
+  /**
+   * span the full width of a parent
+   */
+  block: boolean;
+}
+
+const VsButton = createComponent<VsButtonProps>({
   props: {
-    /**
-     * Size of button
-     */
     size: {
-      type: String as PropType<"small" | "normal">,
       default: "normal"
     },
-
-    /**
-     * Type of button
-     */
     variant: {
-      type: String as PropType<
-        "primary" | "secondary" | "danger" | "danger-secondary"
-      >,
       default: "secondary"
     },
-
-    /**
-     * Gets the classification and default behavior of the button.
-     */
-    type: {
-      type: String as PropType<HTMLButtonElement["type"]>,
-      default: "button"
-    },
-
-    /**
-     * Specify the HTML tag.
-     * eg: tag = "div"
-     */
     tag: {
-      type: String as PropType<keyof HTMLElementTagNameMap>,
       default: "button"
     },
-
-    /**
-     * Is loading
-     */
     loading: {
-      type: Boolean,
       default: false
     },
-
-    /**
-     * Is disabled
-     */
     disabled: {
-      type: Boolean,
       default: false
     },
-
-    /**
-     * span the full width of a parent
-     */
     block: {
-      type: Boolean,
       default: false
     }
   },
   setup(props, ctx) {
+    /**
+     * if button text is two CN char, split them with space (inspired by ant design)
+     */
+    function splitTwoCNChar(
+      nodes?: VNode[]
+    ): boolean | string | VNode[] | undefined {
+      const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
+      if (
+        nodes &&
+        nodes.length === 1 &&
+        !nodes[0].tag &&
+        rxTwoCNChar.test(nodes[0].text || "")
+      ) {
+        const twoChar = nodes[0].text || "";
+        return twoChar.split("").join(" ");
+      }
+      return nodes;
+    }
+
     return (): VNode => {
       const isDisabled = props.disabled || props.loading;
 
-      const classNamePrefix = "vs-btn";
       const classData = {
         [classNamePrefix]: true,
         [`${classNamePrefix}--${props.size}`]: true,
@@ -77,11 +87,15 @@ const VsButton = createComponent({
         [`${classNamePrefix}--icon`]: props.loading,
         [`${classNamePrefix}--block`]: props.block
       };
+
+      const children = splitTwoCNChar(ctx.slots.default && ctx.slots.default());
+
       return (
         <props.tag
+          tabindex="0"
           class={classData}
           disabled={isDisabled}
-          type={props.type}
+          aria-disabled={isDisabled}
           {...{ on: ctx.listeners }}
         >
           {props.loading && (
@@ -92,7 +106,7 @@ const VsButton = createComponent({
             />
           )}
 
-          {ctx.slots.default && ctx.slots.default()}
+          {children}
         </props.tag>
       );
     };
