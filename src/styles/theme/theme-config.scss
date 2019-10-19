@@ -13,9 +13,11 @@ $gray-color-list: $gray-list;
 
 $default-focus-shadow: 0 0 0 3px map-get($primary-color-list, "2");
 $danger-focus-shadow: 0 0 0 3px map-get($danger-color-list, "2");
+$default-inline-line-height: 1.5;
 $default-font-size: 14px;
 $default-border-size: 2px;
 $small-border-radius: 2px;
+$default-disabled-opacity: 0.6;
 
 /* Translation
    ========================================================================== */
@@ -29,6 +31,8 @@ $color-translation: background $default-translation-duration,
 
 $button-border-radius: $small-border-radius;
 $button-font-size: $default-font-size;
+$button-default-line-height: $default-inline-line-height;
+$button-disabled-opacity: $default-disabled-opacity;
 
 /**
  * Default Size
@@ -96,3 +100,10 @@ $dark-theme-button-danger-secondary-border-color: map-get(
   "7"
 );
 $dark-theme-button-danger-secondary-color: map-get($danger-color-list, "7");
+
+/* Circular Progress
+   ========================================================================== */
+
+$circular-progress-small-size: 1em;
+$circular-progress-normal-size: 2em;
+$circular-progress-primary-color: map-get($primary-color-list, "7");

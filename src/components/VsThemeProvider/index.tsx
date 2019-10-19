@@ -1,14 +1,16 @@
-import { createComponent } from "@vue/composition-api";
+import { createComponent, PropType } from "@vue/composition-api";
 import { VNode } from "vue";
 
-const VsThemeProvider = createComponent({
+interface VsThemeProviderProps {
+  /**
+   * Theme
+   */
+  theme: "light" | "dark";
+}
+
+const VsThemeProvider = createComponent<VsThemeProviderProps>({
   props: {
-    /**
-     * Theme
-     * @type {"light"|"dark"}
-     */
     theme: {
-      type: String,
       default: "light"
     }
   },

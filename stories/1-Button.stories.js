@@ -21,9 +21,9 @@ export const allPropsInteractive = () => ({
         "normal"
       )
     },
-    type: {
+    variant: {
       default: radios(
-        "type",
+        "variant",
         {
           primary: "primary",
           secondary: "secondary",
@@ -39,19 +39,28 @@ export const allPropsInteractive = () => ({
     disabled: {
       default: boolean("disabled", false)
     },
+    block: {
+      default: boolean("block", false)
+    },
     slotValue: {
       default: text("slotValue", "default button")
     }
   },
+  methods: {
+    greet: function(event) {
+      console.log(event);
+    }
+  },
   template: html`
-    <vs-theme-provider>
-      <vs-button
-        v-bind:size="size"
-        :type="type"
-        :loading="loading"
-        :disabled="disabled"
-        >{{slotValue}}</vs-button
-      >
-    </vs-theme-provider>
+    <vs-button
+      :size="size"
+      :variant="variant"
+      :loading="loading"
+      :disabled="disabled"
+      :block="block"
+      tag="div"
+      @click="greet"
+      >{{slotValue}}</vs-button
+    >
   `
 });

@@ -1,12 +1,14 @@
 import "./styles/index.scss";
 import VsButton from "./components/VsButton";
 import VsThemeProvider from "./components/VsThemeProvider";
+import VsCircularProgress from "./components/VsCircularProgress";
 import VueCompositionApi from "@vue/composition-api";
 
 import { PluginFunction } from "vue";
 const Components = {
   VsButton,
-  VsThemeProvider
+  VsThemeProvider,
+  VsCircularProgress
 };
 
 const install: PluginFunction<never> = function(Vue) {

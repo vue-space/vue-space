@@ -3,10 +3,11 @@
 
 .#{$prefix}-btn {
   font-size: $button-font-size;
+  line-height: $button-default-line-height;
+  background: transparent;
   border-radius: $button-border-radius;
   cursor: pointer;
   transition: $color-translation;
-  background: transparent;
 
   &:focus {
     outline: none;
@@ -16,12 +17,12 @@
     color: $button-secondary-color;
     border: $button-secondary-border-width solid $button-secondary-border-color;
 
-    &:hover {
+    &:hover:not([disabled]) {
       color: $button-secondary-color--hover;
       background: $button-secondary-background--hover;
     }
 
-    &:active {
+    &:active:not([disabled]) {
       background: $button-secondary-background--active;
       border-color: $button-secondary-background--active;
     }
@@ -33,11 +34,11 @@
     background: $button-primary-background;
     border: 0;
 
-    &:hover {
+    &:hover:not([disabled]) {
       background: $button-primary-background--hover;
     }
 
-    &:active {
+    &:active:not([disabled]) {
       background: $button-primary-background--active;
     }
   }
@@ -47,11 +48,11 @@
     background: $button-danger-background;
     border: 0;
 
-    &:hover {
+    &:hover:not([disabled]) {
       background: $button-danger-background--hover;
     }
 
-    &:active {
+    &:active:not([disabled]) {
       background: $button-danger-background--active;
     }
   }
@@ -61,12 +62,12 @@
     border: $button-danger-secondary-border-width solid
       $button-danger-secondary-border-color;
 
-    &:hover {
+    &:hover:not([disabled]) {
       color: $button-danger-secondary-color--hover;
       background: $button-danger-secondary-background--hover;
     }
 
-    &:active {
+    &:active:not([disabled]) {
       background: $button-danger-secondary-background--active;
       border-color: $button-danger-secondary-background--active;
     }
@@ -108,5 +109,28 @@
   &--danger-secondary#{&}--small {
     padding: $button-small-padding-y - $button-secondary-border-width
       $button-small-padding-x - $button-secondary-border-width;
+  }
+
+  &--disabled {
+    opacity: $default-disabled-opacity;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    margin-left: -3px;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    vertical-align: -0.14em;
+    transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      margin-right 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
