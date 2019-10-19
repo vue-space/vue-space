@@ -58,6 +58,7 @@ export const allPropsInteractive = () => ({
       :loading="loading"
       :disabled="disabled"
       :block="block"
+      tag="div"
       @click="greet"
       >{{slotValue}}</vs-button
     >
