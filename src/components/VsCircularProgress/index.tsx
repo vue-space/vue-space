@@ -1,24 +1,24 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
-interface VsButtonProps {
+
+const classNamePrefix = "vs-circular-progress";
+
+interface VsButtonProps extends HTMLElement {
+  /**
+   * Size of progress
+   */
   size: "small" | "normal";
+  /**
+   * Color of Progress
+   */
   color: "currentColor" | "primary" | string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
 }
 
 const VsButton = createComponent<VsButtonProps>({
   props: {
-    /**
-     * Size of progress
-     */
     size: {
       default: "normal"
     },
-
-    /**
-     * Color of Progress
-     */
     color: {
       default: "primary"
     }
@@ -31,7 +31,6 @@ const VsButton = createComponent<VsButtonProps>({
     return (): VNode => {
       const isPrimaryColor = judgePrimaryColor(props.color);
 
-      const classNamePrefix = "vs-circular-progress";
       const classData = {
         [classNamePrefix]: true,
         [`${classNamePrefix}--${props.size}`]: true,
