@@ -5,14 +5,21 @@
 
 $primary-color-list: $indigo-list;
 $danger-color-list: $red-list;
+$success-color-list: $green-list;
 $warning-color-list: $yellow-list;
 $gray-color-list: $gray-list;
 
 /* Default
    ========================================================================== */
 
-$default-focus-shadow: 0 0 0 3px map-get($primary-color-list, "2");
-$danger-focus-shadow: 0 0 0 3px map-get($danger-color-list, "2");
+$default-focus-shadow-size: 0 0 0 3px;
+$default-focus-shadow-color-level: "2";
+$default-focus-shadow: $default-focus-shadow-size
+  map-get($primary-color-list, $default-focus-shadow-color-level);
+$danger-focus-shadow: $default-focus-shadow-size
+  map-get($danger-color-list, $default-focus-shadow-color-level);
+$success-focus-shadow: $default-focus-shadow-size
+  map-get($success-color-list, $default-focus-shadow-color-level);
 $default-inline-line-height: 1.5;
 $default-font-size: 14px;
 $default-border-size: 2px;
@@ -107,3 +114,47 @@ $dark-theme-button-danger-secondary-color: map-get($danger-color-list, "7");
 $circular-progress-small-size: 1em;
 $circular-progress-normal-size: 2em;
 $circular-progress-primary-color: map-get($primary-color-list, "7");
+
+/* Input
+   ========================================================================== */
+
+$input-border-radius: 2px;
+$input-border-width: 2px;
+$input-padding-y: 10px - $input-border-width;
+$input-padding-x: 16px - $input-border-width;
+$input-padding: $input-padding-y $input-padding-x;
+$input-icon-section-width: 40px;
+$input-normal-color-list: $primary-color-list;
+$input-error-color-list: $danger-color-list;
+$input-success-color-list: $success-color-list;
+$input-background-color-level: "0";
+$input-background--focus: $white;
+$input-border-color-level: "1";
+$input-border-color-level--focus: "5";
+
+$input-normal-shadow--focus: $default-focus-shadow;
+$input-normal-background: map-get($primary-color-list, "0");
+$input-normal-background--focus: $white;
+$input-normal-border-color: map-get($primary-color-list, "1");
+$input-normal-border-color--focus: map-get($primary-color-list, "5");
+$input-normal-border: $input-border-width solid $input-normal-border-color;
+$input-normal-border--focus: $input-border-width solid
+  $input-normal-border-color--focus;
+
+$input-error-shadow--focus: $danger-focus-shadow;
+$input-error-background: map-get($danger-color-list, "0");
+$input-error-background--focus: $white;
+$input-error-border-color: map-get($danger-color-list, "1");
+$input-error-border-color--focus: map-get($danger-color-list, "5");
+$input-error-border: $input-border-width solid $input-error-border-color;
+$input-error-border--focus: $input-border-width solid
+  $input-error-border-color--focus;
+
+$input-success-shadow--focus: $success-focus-shadow;
+$input-success-background: map-get($success-color-list, "0");
+$input-success-background--focus: $white;
+$input-success-border-color: map-get($success-color-list, "1");
+$input-success-border-color--focus: map-get($success-color-list, "5");
+$input-success-border: $input-border-width solid $input-success-border-color;
+$input-success-border--focus: $input-border-width solid
+  $input-success-border-color--focus;
