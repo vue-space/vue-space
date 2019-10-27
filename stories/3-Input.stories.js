@@ -1,26 +1,38 @@
 import { html } from "./utils/editor";
-import { radios, boolean, withKnobs, text } from "@storybook/addon-knobs";
-import Centered from "@storybook/addon-centered/vue";
+import { radios, withKnobs, text } from "@storybook/addon-knobs";
 import VsButton from "../src/components/VsButton";
+import { paddingDecorator } from "./utils/decorators";
 
 export default {
   title: "vs-input",
   component: VsButton,
-  decorators: [withKnobs, Centered]
+  decorators: [withKnobs, paddingDecorator]
 };
 
 export const allPropsInteractive = () => ({
+  props: {
+    validateStatus: {
+      default: radios(
+        "validateStatus",
+        { success: "success", error: "error", normal: "normal" },
+        "normal"
+      )
+    },
+    type: {
+      default: text("type", "text")
+    }
+  },
   data() {
     return {
       value: ""
     };
   },
-  methods: {
-    greet: function(event) {
-      console.log(event);
-    }
-  },
   template: html`
-    <vs-input v-model="value" placeholder="yahaha" />
+    <vs-input
+      v-model="value"
+      placeholder="yahaha"
+      :validateStatus="validateStatus"
+      :type="type"
+    />
   `
 });
