@@ -73,7 +73,8 @@ $red-list: (
   "6": #fa5252,
   "7": #f03e3e,
   "8": #e03131,
-  "9": #c92a2a
+  "9": #c92a2a,
+  "font": #5a0000
 );
 
 $red-0: map-get($red-list, "0");
@@ -100,7 +101,8 @@ $pink-list: (
   "6": #e64980,
   "7": #d6336c,
   "8": #c2255c,
-  "9": #a61e4d
+  "9": #a61e4d,
+  "font": #4e001b
 );
 
 $pink-0: map-get($pink-list, "0");
@@ -127,7 +129,8 @@ $grape-list: (
   "6": #be4bdb,
   "7": #ae3ec9,
   "8": #9c36b5,
-  "9": #862e9c
+  "9": #862e9c,
+  "font": #405
 );
 
 $grape-0: map-get($grape-list, "0");
@@ -154,7 +157,8 @@ $violet-list: (
   "6": #7950f2,
   "7": #7048e8,
   "8": #6741d9,
-  "9": #5f3dc4
+  "9": #5f3dc4,
+  "font": #14004e
 );
 
 $violet-0: map-get($violet-list, "0");
@@ -182,7 +186,8 @@ $indigo-list: (
   "7": #4263eb,
   "8": #3b5bdb,
   "9": #364fc7,
-  "10": #3c4fa8
+  "10": #3c4fa8,
+  "font": #000f50
 );
 
 $indigo-0: map-get($indigo-list, "0");
@@ -210,7 +215,8 @@ $blue-list: (
   "6": #228be6,
   "7": #1c7ed6,
   "8": #1971c2,
-  "9": #1864ab
+  "9": #1864ab,
+  "font": #002547
 );
 
 $blue-0: map-get($blue-list, "0");
@@ -237,7 +243,8 @@ $cyan-list: (
   "6": #15aabf,
   "7": #1098ad,
   "8": #0c8599,
-  "9": #0b7285
+  "9": #0b7285,
+  "font": #003038
 );
 
 $cyan-0: map-get($cyan-list, "0");
@@ -264,7 +271,8 @@ $teal-list: (
   "6": #12b886,
   "7": #0ca678,
   "8": #099268,
-  "9": #087f5b
+  "9": #087f5b,
+  "font": #003021
 );
 
 $teal-0: map-get($teal-list, "0");
@@ -291,7 +299,8 @@ $green-list: (
   "6": #40c057,
   "7": #37b24d,
   "8": #2f9e44,
-  "9": #2b8a3e
+  "9": #2b8a3e,
+  "font": #003b0c
 );
 
 $green-0: map-get($green-list, "0");
@@ -318,7 +327,8 @@ $lime-list: (
   "6": #82c91e,
   "7": #74b816,
   "8": #66a80f,
-  "9": #5c940d
+  "9": #5c940d,
+  "font": #264100
 );
 
 $lime-0: map-get($lime-list, "0");
@@ -345,7 +355,8 @@ $yellow-list: (
   "6": #fab005,
   "7": #f59f00,
   "8": #f08c00,
-  "9": #e67700
+  "9": #e67700,
+  "font": #422200
 );
 
 $yellow-0: map-get($yellow-list, "0");
@@ -372,7 +383,8 @@ $orange-list: (
   "6": #fd7e14,
   "7": #f76707,
   "8": #e8590c,
-  "9": #d9480f
+  "9": #d9480f,
+  "font": #521700
 );
 
 $orange-0: map-get($orange-list, "0");

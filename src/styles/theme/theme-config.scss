@@ -29,9 +29,9 @@ $default-disabled-opacity: 0.6;
 /* Translation
    ========================================================================== */
 $default-translation-duration: 200ms;
+$default-border-color-translation: border-color $default-translation-duration;
 $color-translation: background $default-translation-duration,
-  color $default-translation-duration,
-  border-color $default-translation-duration;
+  color $default-translation-duration, $default-border-color-translation;
 
 /* Button
    ========================================================================== */
@@ -131,30 +131,5 @@ $input-background-color-level: "0";
 $input-background--focus: $white;
 $input-border-color-level: "1";
 $input-border-color-level--focus: "5";
-
-$input-normal-shadow--focus: $default-focus-shadow;
-$input-normal-background: map-get($primary-color-list, "0");
-$input-normal-background--focus: $white;
-$input-normal-border-color: map-get($primary-color-list, "1");
-$input-normal-border-color--focus: map-get($primary-color-list, "5");
-$input-normal-border: $input-border-width solid $input-normal-border-color;
-$input-normal-border--focus: $input-border-width solid
-  $input-normal-border-color--focus;
-
-$input-error-shadow--focus: $danger-focus-shadow;
-$input-error-background: map-get($danger-color-list, "0");
-$input-error-background--focus: $white;
-$input-error-border-color: map-get($danger-color-list, "1");
-$input-error-border-color--focus: map-get($danger-color-list, "5");
-$input-error-border: $input-border-width solid $input-error-border-color;
-$input-error-border--focus: $input-border-width solid
-  $input-error-border-color--focus;
-
-$input-success-shadow--focus: $success-focus-shadow;
-$input-success-background: map-get($success-color-list, "0");
-$input-success-background--focus: $white;
-$input-success-border-color: map-get($success-color-list, "1");
-$input-success-border-color--focus: map-get($success-color-list, "5");
-$input-success-border: $input-border-width solid $input-success-border-color;
-$input-success-border--focus: $input-border-width solid
-  $input-success-border-color--focus;
+$input-line-height: $default-inline-line-height;
+$input-border-color-translation: $default-border-color-translation;
