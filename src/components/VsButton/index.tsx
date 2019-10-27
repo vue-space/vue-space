@@ -88,7 +88,7 @@ const VsButton = createComponent<VsButtonProps>({
         [`${classNamePrefix}--block`]: props.block
       };
 
-      const children = splitTwoCNChar(ctx.slots.default && ctx.slots.default());
+      const children = splitTwoCNChar(ctx.slots.default());
 
       return (
         <props.tag
