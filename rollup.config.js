@@ -1,6 +1,7 @@
 import resolve from "rollup-plugin-node-resolve";
 import autoprefixer from "autoprefixer";
 import postcss from "rollup-plugin-postcss";
+import cssnano from "cssnano";
 import babel from "rollup-plugin-babel";
 import external from "rollup-plugin-peer-deps-external";
 import { camelCase } from "lodash";
@@ -47,7 +48,7 @@ export default {
   plugins: [
     peerDepsExternal(),
     postcss({
-      plugins: [autoprefixer],
+      plugins: [autoprefixer, cssnano],
       sourceMap: true,
       extract: true,
       extensions: [".scss", ".css"]
