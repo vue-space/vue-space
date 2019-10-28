@@ -3,7 +3,7 @@ import { radios, withKnobs, text } from "@storybook/addon-knobs";
 import { paddingDecorator } from "./utils/decorators";
 
 export default {
-  title: "vs-input",
+  title: "vs-form-item",
   decorators: [withKnobs, paddingDecorator]
 };
 
@@ -16,6 +16,15 @@ export const allPropsInteractive = () => ({
         "normal"
       )
     },
+    label: {
+      default: text("label", "Label")
+    },
+    feedback: {
+      default: text("feedback", "Please enter something")
+    },
+    description: {
+      default: text("description", "Let us know your name.")
+    },
     type: {
       default: text("type", "text")
     }
@@ -26,11 +35,20 @@ export const allPropsInteractive = () => ({
     };
   },
   template: html`
-    <vs-input
-      v-model="value"
-      placeholder="yahaha"
+    <vs-form-item
+      :label="label"
+      labelFor="input"
       :validateStatus="validateStatus"
-      :type="type"
-    />
+      :description="description"
+      :feedback="feedback"
+    >
+      <vs-input
+        id="input"
+        v-model="value"
+        placeholder="yahaha"
+        :validateStatus="validateStatus"
+        :type="type"
+      />
+    </vs-form-item>
   `
 });
