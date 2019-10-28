@@ -1,10 +1,10 @@
 import { html } from "./utils/editor";
-import { radios, withKnobs, text } from "@storybook/addon-knobs";
 import { paddingDecorator } from "./utils/decorators";
+import { action } from "@storybook/addon-actions";
 
 export default {
   title: "vs-form",
-  decorators: [withKnobs, paddingDecorator]
+  decorators: [paddingDecorator]
 };
 
 export const normalForm = () => ({
@@ -17,8 +17,11 @@ export const normalForm = () => ({
       }
     };
   },
+  methods: {
+    eventSubmit: action("submit")
+  },
   template: html`
-    <vs-form @submit.prevent>
+    <vs-form @submit.prevent="eventSubmit">
       <vs-form-item label="Normal Form" labelFor="normal-form">
         <vs-input
           id="normal-form"
@@ -53,8 +56,8 @@ export const normalForm = () => ({
         />
       </vs-form-item>
       <vs-form-item>
-        <vs-button variant="primary">Submit</vs-button>
-        <vs-button>Cancel</vs-button>
+        <vs-button type="submit" variant="primary">Submit</vs-button>
+        <vs-button type="button">Cancel</vs-button>
       </vs-form-item>
     </vs-form>
   `
