@@ -65,6 +65,8 @@ declare namespace VNodeDom {
   };
 
   interface HTMLAttributes extends AriaAttributes {
+    attrs?: object;
+
     // Standard HTML Attributes, 'class' and 'style' aren't defined here because they exist in VNodeData
     accessKey?: string;
     contentEditable?: boolean;
@@ -303,7 +305,7 @@ declare namespace VNodeDom {
 
   interface LabelHTMLAttributes extends HTMLAttributes {
     form?: string;
-    htmlfor?: string;
+    for?: string;
   }
 
   interface LiHTMLAttributes extends HTMLAttributes {
