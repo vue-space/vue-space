@@ -1,0 +1,89 @@
+@import "../utils/naming.scss";
+@import "../theme/theme-config.scss";
+
+@mixin input-state($color-list) {
+  color: map-get($color-list, "font");
+  background: map-get($color-list, $input-background-color-level);
+  border: $input-border-width solid
+    map-get($color-list, $input-border-color-level);
+
+  &::placeholder {
+    color: fade-out(map-get($color-list, "font"), 0.4);
+  }
+
+  &:focus {
+    border-color: map-get($color-list, $input-border-color-level--focus);
+    box-shadow: $default-focus-shadow-size
+      map-get($color-list, $default-focus-shadow-color-level);
+  }
+
+  &:hover {
+    border-color: map-get($color-list, $input-border-color-level--focus);
+  }
+}
+
+.#{$prefix}-input {
+  @include input-state($input-normal-color-list);
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: $input-padding;
+  line-height: $input-line-height;
+  border-radius: $input-border-radius;
+  transition: $input-border-color-translation;
+
+  &:focus {
+    background: $input-background--focus;
+    outline: none;
+  }
+
+  &--error {
+    @include input-state($input-error-color-list);
+  }
+
+  &--success {
+    @include input-state($input-success-color-list);
+  }
+
+  &--suffix {
+    padding-right: $input-icon-section-width;
+  }
+
+  &--prefix {
+    padding-right: $input-icon-section-width;
+  }
+
+  &__prefix,
+  &__suffix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    i {
+      font-size: $input-icon-section-width / 2;
+    }
+  }
+
+  &__prefix {
+    left: $input-icon-section-width / 4;
+  }
+  &__suffix {
+    right: $input-icon-section-width / 4;
+  }
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    .#{$prefix}-input {
+      width: 100%;
+    }
+  }
+
+  &--error + &__suffix {
+    color: map-get($input-error-color-list, $input-border-color-level--focus);
+  }
+
+  &--success + &__suffix {
+    color: map-get($input-success-color-list, $input-border-color-level--focus);
+  }
+}

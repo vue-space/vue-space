@@ -1,12 +1,12 @@
 import { html } from "./utils/editor";
 import { radios, boolean, withKnobs, text } from "@storybook/addon-knobs";
-import Centered from "@storybook/addon-centered/vue";
 import VsButton from "../src/components/VsButton";
+import { paddingDecorator } from "./utils/decorators";
 
 export default {
   title: "vs-button",
   component: VsButton,
-  decorators: [withKnobs, Centered]
+  decorators: [withKnobs, paddingDecorator]
 };
 
 export const allPropsInteractive = () => ({
@@ -58,7 +58,6 @@ export const allPropsInteractive = () => ({
       :loading="loading"
       :disabled="disabled"
       :block="block"
-      tag="div"
       @click="greet"
       >{{slotValue}}</vs-button
     >
