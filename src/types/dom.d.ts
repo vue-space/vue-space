@@ -66,6 +66,7 @@ declare namespace VNodeDom {
 
   interface HTMLAttributes extends AriaAttributes {
     attrs?: object;
+    on?: object;
 
     // Standard HTML Attributes, 'class' and 'style' aren't defined here because they exist in VNodeData
     accessKey?: string;

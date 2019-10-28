@@ -8,7 +8,9 @@ interface VsFormProps extends FormHTMLAttributes {}
 const VsForm = createComponent<VsFormProps>({
   props: {},
   setup(props, ctx) {
-    return (): VNode => <form>{ctx.slots.default()}</form>;
+    return (): VNode => (
+      <form {...{ on: ctx.listeners }}>{ctx.slots.default()}</form>
+    );
   }
 });
 
