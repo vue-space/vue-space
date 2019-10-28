@@ -10,6 +10,10 @@
   cursor: pointer;
   transition: $color-translation;
 
+  & + & {
+    margin-left: $button-gutter-size;
+  }
+
   &:focus {
     outline: none;
   }

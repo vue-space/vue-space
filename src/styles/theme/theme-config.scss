@@ -40,6 +40,7 @@ $button-border-radius: $small-border-radius;
 $button-font-size: $default-font-size;
 $button-default-line-height: $default-inline-line-height;
 $button-disabled-opacity: $default-disabled-opacity;
+$button-gutter-size: 12px;
 
 /**
  * Default Size
@@ -133,3 +134,19 @@ $input-border-color-level: "1";
 $input-border-color-level--focus: "5";
 $input-line-height: $default-inline-line-height;
 $input-border-color-translation: $default-border-color-translation;
+
+/* FormItem
+   ========================================================================== */
+
+$form-item-label-margin-bottom: 6px;
+$form-item-gutter-size: 16px;
+
+$form-feedback-success-color-list: $input-success-color-list;
+$form-feedback-error-color-list: $input-error-color-list;
+$form-feedback-color-level: "9";
+$form-feedback-font-size: 12px;
+$form-feedback-margin-top: 4px;
+
+$form-description-font-size: 12px;
+$form-description-margin-top: 4px;
+$form-description-font-color: map-get($gray-color-list, "7");
