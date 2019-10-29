@@ -119,7 +119,7 @@
       $button-small-padding-x - $button-secondary-border-width;
   }
 
-  &--disabled {
+  &[disabled] {
     opacity: $default-disabled-opacity;
 
     &:hover {

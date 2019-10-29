@@ -83,7 +83,6 @@ const VsButton = createComponent<VsButtonProps>({
         [classNamePrefix]: true,
         [`${classNamePrefix}--${props.size}`]: true,
         [`${classNamePrefix}--${props.variant}`]: true,
-        [`${classNamePrefix}--disabled`]: isDisabled,
         [`${classNamePrefix}--icon`]: props.loading,
         [`${classNamePrefix}--block`]: props.block
       };
