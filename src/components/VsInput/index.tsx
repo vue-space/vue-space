@@ -1,16 +1,16 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { InputHTMLAttributes, FormEvent } from "../../types/dom";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import VsIcon from "../VsIcon";
+
+import {
+  ValidatableComponent,
+  validatableComponentProps,
+  computeValidation
+} from "../../utils/validatable";
 
 const classNamePrefix = "vs-input";
 
-interface VsInputProps extends InputHTMLAttributes {
-  /**
-   * validate status
-   */
-  validateStatus: "success" | "error" | "normal";
+interface VsInputProps extends InputHTMLAttributes, ValidatableComponent {
   /**
    * input type
    */
@@ -37,12 +37,10 @@ const VsInput = createComponent<VsInputProps>({
     value: {
       default: ""
     },
-    validateStatus: {
-      default: "normal"
-    },
     type: {
       default: "text"
-    }
+    },
+    ...validatableComponentProps
   },
   inheritAttrs: false,
   setup(props, ctx) {
@@ -59,8 +57,13 @@ const VsInput = createComponent<VsInputProps>({
 
       const isPassword = type === "password";
 
-      const isValidateSuccess = validateStatus === "success";
-      const isValidateError = validateStatus === "error";
+      const {
+        validationClassName,
+        validationAriaAttributes,
+        isValidateSuccess,
+        isValidateError,
+        validationIcon
+      } = computeValidation(classNamePrefix, validateStatus);
 
       const hasPrefix = Boolean(prefix);
       const hasSuffix = Boolean(
@@ -69,11 +72,9 @@ const VsInput = createComponent<VsInputProps>({
 
       const classData = {
         [classNamePrefix]: true,
-        [`${classNamePrefix}--disabled`]: disabled,
-        [`${classNamePrefix}--success`]: isValidateSuccess,
-        [`${classNamePrefix}--error`]: isValidateError,
         [`${classNamePrefix}--prefix`]: hasPrefix,
-        [`${classNamePrefix}--suffix`]: hasSuffix
+        [`${classNamePrefix}--suffix`]: hasSuffix,
+        ...validationClassName
       };
 
       const inputElement = (
@@ -83,9 +84,8 @@ const VsInput = createComponent<VsInputProps>({
           type={type}
           disabled={disabled}
           aria-disabled={disabled}
-          aria-invalid={isValidateError}
           {...{ on: { ...ctx.listeners, input: eventInput } }}
-          {...{ attrs: ctx.attrs }}
+          {...{ attrs: { ...ctx.attrs, ...validationAriaAttributes } }}
         />
       );
 
@@ -95,13 +95,8 @@ const VsInput = createComponent<VsInputProps>({
         );
         const suffixElement = hasSuffix && (
           <span class={`${classNamePrefix}__suffix`}>
-            {isValidateError ? (
-              <VsIcon name="close" />
-            ) : isValidateSuccess ? (
-              <VsIcon name="checkmark" />
-            ) : (
-              suffix()
-            )}
+            {suffix && suffix()}
+            {validationIcon}
           </span>
         );
 

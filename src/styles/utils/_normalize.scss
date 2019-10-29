@@ -323,6 +323,18 @@ textarea {
   -webkit-appearance: button; /* 1 */
 }
 
+/**
+ * remove outline dotted border from firefox select
+ */
+
+select,
+select:-moz-focusring,
+select::-moz-focus-inner {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+  background-image: none;
+}
+
 /* Interactive
    ========================================================================== */
 
