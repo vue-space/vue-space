@@ -64,7 +64,8 @@
 
   &--danger-secondary {
     color: $button-danger-secondary-color;
-    border: $button-danger-secondary-border-width solid
+    border:
+      $button-danger-secondary-border-width solid
       $button-danger-secondary-border-color;
 
     &:hover:not([disabled]) {
@@ -99,7 +100,8 @@
   // secondary style normal size
   &--secondary#{&}--normal,
   &--danger-secondary#{&}--normal {
-    padding: $button-default-padding-y - $button-secondary-border-width
+    padding:
+      $button-default-padding-y - $button-secondary-border-width
       $button-default-padding-x - $button-secondary-border-width;
   }
 
@@ -112,12 +114,14 @@
   // secondary style small size
   &--secondary#{&}--small,
   &--danger-secondary#{&}--small {
-    padding: $button-small-padding-y - $button-secondary-border-width
+    padding:
+      $button-small-padding-y - $button-secondary-border-width
       $button-small-padding-x - $button-secondary-border-width;
   }
 
   &--disabled {
     opacity: $default-disabled-opacity;
+
     &:hover {
       cursor: default;
     }
@@ -135,7 +139,8 @@
     font-style: normal;
     line-height: 0;
     vertical-align: -0.14em;
-    transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    transition:
+      margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
       margin-right 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }

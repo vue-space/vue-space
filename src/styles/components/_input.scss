@@ -38,6 +38,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
     i {
       font-size: $input-icon-section-width / 2;
     }
@@ -46,14 +47,17 @@
   &__prefix {
     left: $input-icon-section-width / 4;
   }
+
   &__suffix {
     right: $input-icon-section-width / 4;
   }
+
   &__wrapper {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
+
     .#{$prefix}-input {
       width: 100%;
     }
