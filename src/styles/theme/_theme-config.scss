@@ -1,4 +1,4 @@
-@import "../colors/color-palette.scss";
+@import "../colors/color-palette";
 
 /* Color Map
    ========================================================================== */
@@ -157,3 +157,21 @@ $form-feedback-margin-top: 4px !default;
 $form-description-font-size: 12px !default;
 $form-description-margin-top: 4px !default;
 $form-description-font-color: map-get($gray-color-list, "7") !default;
+
+/* Grid
+   ========================================================================== */
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
