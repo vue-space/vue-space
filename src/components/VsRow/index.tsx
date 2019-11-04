@@ -3,15 +3,30 @@ import { VNode } from "vue";
 import { HTMLAttributes } from "../../types/dom";
 
 const classNamePrefix = "vs-row";
+const noGuttersPrefix = "vs-no-gutters";
 
-interface VsRowProps extends HTMLAttributes {}
+interface VsRowProps extends HTMLAttributes {
+  /**
+   * gutter
+   */
+  gutter: boolean;
+}
 
 const VsRow = createComponent<VsRowProps>({
-  props: {},
+  props: {
+    gutter: {
+      default: false
+    }
+  },
   setup(props, ctx) {
     return (): VNode => {
+      const classData = {
+        [classNamePrefix]: true,
+        [noGuttersPrefix]: !props.gutter
+      };
+
       return (
-        <div class={classNamePrefix} {...{ on: ctx.listeners }}>
+        <div class={classData} {...{ on: ctx.listeners }}>
           {ctx.slots.default()}
         </div>
       );
