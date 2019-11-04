@@ -6,6 +6,8 @@ import VsInput from "./components/VsInput";
 import VsIcon from "./components/VsIcon";
 import VsForm from "./components/VsForm";
 import VsFormItem from "./components/VsFormItem";
+import VsRow from "./components/VsRow";
+import VsCol from "./components/VsCol";
 import VueCompositionApi from "@vue/composition-api";
 
 import { PluginFunction } from "vue";
@@ -16,7 +18,9 @@ const Components = {
   VsInput,
   VsIcon,
   VsForm,
-  VsFormItem
+  VsFormItem,
+  VsRow,
+  VsCol
 };
 
 const install: PluginFunction<never> = function(Vue) {
