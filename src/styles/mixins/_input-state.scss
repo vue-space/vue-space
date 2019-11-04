@@ -1,0 +1,25 @@
+@import "../utils/naming";
+@import "../theme/theme-config";
+
+@mixin input-state($color-list) {
+  color: map-get($color-list, "font");
+  background: map-get($color-list, $input-background-color-level);
+  border:
+    $input-border-width solid
+    map-get($color-list, $input-border-color-level);
+
+  &::placeholder {
+    color: fade-out(map-get($color-list, "font"), 0.4);
+  }
+
+  &:focus {
+    border-color: map-get($color-list, $input-border-color-level--focus);
+    box-shadow:
+      $default-focus-shadow-size
+      map-get($color-list, $default-focus-shadow-color-level);
+  }
+
+  &:hover {
+    border-color: map-get($color-list, $input-border-color-level--focus);
+  }
+}

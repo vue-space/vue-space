@@ -1,0 +1,166 @@
+@import "../colors/color-palette";
+
+/* Color Map
+   ========================================================================== */
+
+$primary-color-list:                  $indigo-list !default;
+$danger-color-list:                   $red-list !default;
+$success-color-list:                  $green-list !default;
+$warning-color-list:                  $yellow-list !default;
+$gray-color-list:                     $gray-list !default;
+
+/* Default
+   ========================================================================== */
+
+$default-focus-shadow-size:           0 0 0 3px !default;
+$default-focus-shadow-color-level:    "2" !default;
+$default-focus-shadow:                $default-focus-shadow-size map-get($primary-color-list, $default-focus-shadow-color-level) !default;
+$danger-focus-shadow:                 $default-focus-shadow-size map-get($danger-color-list, $default-focus-shadow-color-level) !default;
+$success-focus-shadow:                $default-focus-shadow-size map-get($success-color-list, $default-focus-shadow-color-level) !default;
+$default-inline-line-height:          1.5 !default;
+$default-font-size:                   14px !default;
+$default-border-size:                 2px !default;
+$small-border-radius:                 2px !default;
+$default-disabled-opacity:            0.6 !default;
+
+/* Translation
+   ========================================================================== */
+$default-translation-duration:        200ms !default;
+$default-border-color-translation:    border-color $default-translation-duration !default;
+$color-translation:
+  background $default-translation-duration,
+  color $default-translation-duration, $default-border-color-translation !default;
+
+/* Button
+   ========================================================================== */
+
+$button-border-radius:                $small-border-radius !default;
+$button-font-size:                    $default-font-size !default;
+$button-default-line-height:          $default-inline-line-height !default;
+$button-disabled-opacity:             $default-disabled-opacity !default;
+$button-gutter-size:                  12px !default;
+
+/**
+ * Default Size
+ */
+
+$button-default-padding-x:            25px !default;
+$button-default-padding-y:            10px !default;
+$button-default-padding:              $button-default-padding-y $button-default-padding-x !default;
+
+/**
+ * Small Size
+ */
+
+$button-small-padding-x:              16px !default;
+$button-small-padding-y:              6px !default;
+$button-small-padding:                $button-small-padding-y $button-small-padding-x !default;
+
+/**
+ * Primary Button
+ */
+
+$button-primary-background:           map-get($primary-color-list, "7") !default;
+$button-primary-background--hover:    map-get($primary-color-list, "8") !default;
+$button-primary-background--active:   map-get($primary-color-list, "9") !default;
+$button-primary-color:                $white !default;
+
+/**
+ * Secondary Button
+ */
+
+$button-secondary-border-color:       map-get($primary-color-list, "7") !default;
+$button-secondary-color:              map-get($primary-color-list, "7") !default;
+$button-secondary-border-width:       2px !default;
+$button-secondary-background--hover:  $button-primary-background !default;
+$button-secondary-background--active: $button-primary-background--active !default;
+$button-secondary-color--hover:       $white !default;
+
+// [dark-theme]
+$dark-theme-button-secondary-border-color: map-get($primary-color-list, "7") !default;
+$dark-theme-button-secondary-color:        map-get($primary-color-list, "7") !default;
+
+/**
+ * Danger Button
+ */
+
+$button-danger-background:            map-get($danger-color-list, "7") !default;
+$button-danger-background--hover:     map-get($danger-color-list, "8") !default;
+$button-danger-background--active:    map-get($danger-color-list, "9") !default;
+$button-danger-color:                 $white !default;
+
+/**
+ * Danger Secondary Button
+ */
+
+$button-danger-secondary-border-color:        map-get($danger-color-list, "7") !default;
+$button-danger-secondary-color:               map-get($danger-color-list, "7") !default;
+$button-danger-secondary-border-width:        2px !default;
+$button-danger-secondary-background--hover:   $button-danger-background !default;
+$button-danger-secondary-background--active:  $button-danger-background--active !default;
+$button-danger-secondary-color--hover:        $white !default;
+
+// [dark-theme]
+$dark-theme-button-danger-secondary-border-color: map-get($danger-color-list, "7") !default;
+$dark-theme-button-danger-secondary-color:        map-get($danger-color-list, "7") !default;
+
+/* Circular Progress
+   ========================================================================== */
+
+$circular-progress-small-size:       1em !default;
+$circular-progress-normal-size:      2em !default;
+$circular-progress-primary-color:    map-get($primary-color-list, "7") !default;
+
+/* Input
+   ========================================================================== */
+
+$input-border-radius:                2px !default;
+$input-border-width:                 2px !default;
+$input-padding-y:                    10px - $input-border-width !default;
+$input-padding-x:                    16px - $input-border-width !default;
+$input-padding:                      $input-padding-y $input-padding-x !default;
+$input-icon-section-width:           40px !default;
+$input-normal-color-list:            $primary-color-list !default;
+$input-error-color-list:             $danger-color-list !default;
+$input-success-color-list:           $success-color-list !default;
+$input-background-color-level:       "0" !default;
+$input-background--focus:            $white !default;
+$input-border-color-level:           "1" !default;
+$input-border-color-level--focus:    "5" !default;
+$input-line-height:                  $default-inline-line-height !default;
+$input-border-color-translation:     $default-border-color-translation !default;
+
+/* FormItem
+   ========================================================================== */
+
+$form-item-label-margin-bottom:      6px !default;
+$form-item-gutter-size:              16px !default;
+$form-feedback-success-color-list:   $input-success-color-list !default;
+$form-feedback-error-color-list:     $input-error-color-list !default;
+$form-feedback-color-level:          "9" !default;
+$form-feedback-font-size:            12px !default;
+$form-feedback-margin-top:           4px !default;
+$form-description-font-size:         12px !default;
+$form-description-margin-top:        4px !default;
+$form-description-font-color:        map-get($gray-color-list, "7") !default;
+
+/* Grid
+   ========================================================================== */
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$grid-columns:                       12 !default;
+$grid-gutter-width:                  30px !default;

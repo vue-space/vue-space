@@ -1,28 +1,8 @@
-@import "../utils/naming.scss";
-@import "../theme/theme-config.scss";
+@import "../utils/naming";
+@import "../theme/theme-config";
+@import "../mixins/input-state";
 
-@mixin input-state($color-list) {
-  color: map-get($color-list, "font");
-  background: map-get($color-list, $input-background-color-level);
-  border: $input-border-width solid
-    map-get($color-list, $input-border-color-level);
-
-  &::placeholder {
-    color: fade-out(map-get($color-list, "font"), 0.4);
-  }
-
-  &:focus {
-    border-color: map-get($color-list, $input-border-color-level--focus);
-    box-shadow: $default-focus-shadow-size
-      map-get($color-list, $default-focus-shadow-color-level);
-  }
-
-  &:hover {
-    border-color: map-get($color-list, $input-border-color-level--focus);
-  }
-}
-
-.#{$prefix}-input {
+.#{$prefix}input {
   @include input-state($input-normal-color-list);
 
   box-sizing: border-box;
@@ -58,6 +38,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
     i {
       font-size: $input-icon-section-width / 2;
     }
@@ -66,14 +47,17 @@
   &__prefix {
     left: $input-icon-section-width / 4;
   }
+
   &__suffix {
     right: $input-icon-section-width / 4;
   }
+
   &__wrapper {
     position: relative;
     display: inline-block;
     box-sizing: border-box;
     width: 100%;
+
     .#{$prefix}-input {
       width: 100%;
     }
