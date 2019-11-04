@@ -2,7 +2,7 @@
 @import "../theme/theme-config";
 @import "../mixins/input-state";
 
-.#{$prefix}-input {
+.#{$prefix}input {
   @include input-state($input-normal-color-list);
 
   box-sizing: border-box;

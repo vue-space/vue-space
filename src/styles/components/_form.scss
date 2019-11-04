@@ -1,7 +1,7 @@
 @import "../utils/naming";
 @import "../theme/theme-config";
 
-.#{$prefix}-form-item {
+.#{$prefix}form-item {
   & + & {
     margin-top: $form-item-gutter-size;
   }

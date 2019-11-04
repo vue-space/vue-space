@@ -78,7 +78,7 @@ $button-secondary-color--hover:       $white !default;
 
 // [dark-theme]
 $dark-theme-button-secondary-border-color: map-get($primary-color-list, "7") !default;
-$dark-theme-button-secondary-color:       map-get($primary-color-list, "7") !default;
+$dark-theme-button-secondary-color:        map-get($primary-color-list, "7") !default;
 
 /**
  * Danger Button
@@ -107,9 +107,9 @@ $dark-theme-button-danger-secondary-color:        map-get($danger-color-list, "7
 /* Circular Progress
    ========================================================================== */
 
-$circular-progress-small-size:             1em !default;
-$circular-progress-normal-size:            2em !default;
-$circular-progress-primary-color:          map-get($primary-color-list, "7") !default;
+$circular-progress-small-size:       1em !default;
+$circular-progress-normal-size:      2em !default;
+$circular-progress-primary-color:    map-get($primary-color-list, "7") !default;
 
 /* Input
    ========================================================================== */

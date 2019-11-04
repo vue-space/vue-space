@@ -1,7 +1,7 @@
 @import "../utils/naming";
 @import "../theme/theme-config";
 
-.#{$prefix}-btn {
+.#{$prefix}btn {
   font-size: $button-font-size;
   line-height: $button-default-line-height;
   text-align: center;
