@@ -8,6 +8,7 @@ import { camelCase } from "lodash";
 import path from "path";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { name, version, license } from "./package.json";
+import { sizeSnapshot } from "rollup-plugin-size-snapshot";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const base = path.resolve(__dirname, ".");
@@ -46,6 +47,7 @@ export default {
   ],
   external: [],
   plugins: [
+    sizeSnapshot(),
     peerDepsExternal(),
     postcss({
       plugins: [autoprefixer, cssnano],
