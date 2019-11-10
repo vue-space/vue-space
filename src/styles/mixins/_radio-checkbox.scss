@@ -1,7 +1,7 @@
 @import "../utils/naming";
 @import "../theme/theme-config";
 
-.#{$prefix}checkbox {
+@mixin make-radio-checkbox-item($isRadio: true) {
   position: relative;
 
   &__input {
