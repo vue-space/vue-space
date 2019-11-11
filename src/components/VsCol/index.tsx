@@ -89,7 +89,6 @@ const VsCol = createComponent<VsColProps>({
         [`${offsetNamePrefix}-${offset}`]: Boolean(offset),
         [`${orderNamePrefix}-${order}`]: Boolean(order)
       };
-      console.log(classData);
 
       return (
         <div class={classData} {...{ on: ctx.listeners }}>

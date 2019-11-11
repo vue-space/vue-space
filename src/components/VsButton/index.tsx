@@ -64,13 +64,8 @@ const VsButton = createComponent<VsButtonProps>({
       nodes?: VNode[]
     ): boolean | string | VNode[] | undefined {
       const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
-      if (
-        nodes &&
-        nodes.length === 1 &&
-        !nodes[0].tag &&
-        rxTwoCNChar.test(nodes[0].text || "")
-      ) {
-        const twoChar = nodes[0].text || "";
+      if (nodes?.length === 1 && rxTwoCNChar.test(nodes[0]?.text || "")) {
+        const twoChar = nodes[0].text ?? "";
         return twoChar.split("").join(" ");
       }
       return nodes;
