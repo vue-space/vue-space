@@ -1,4 +1,4 @@
-import { createComponent, PropType } from "@vue/composition-api";
+import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 
 interface VsThemeProviderProps {
@@ -16,11 +16,7 @@ const VsThemeProvider = createComponent<VsThemeProviderProps>({
   },
   setup(props, ctx) {
     return (): VNode => {
-      return (
-        <div class={`vs-theme-${props.theme}`}>
-          {ctx.slots.default && ctx.slots.default()}
-        </div>
-      );
+      return <div class={`vs-theme-${props.theme}`}>{ctx.slots.default()}</div>;
     };
   }
 });

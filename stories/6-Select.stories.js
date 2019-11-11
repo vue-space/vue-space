@@ -1,9 +1,9 @@
 import { html } from "./utils/editor";
-import { radios, withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { radios, withKnobs, text } from "@storybook/addon-knobs";
 import { paddingDecorator } from "./utils/decorators";
 
 export default {
-  title: "vs-form-item",
+  title: "vs-select",
   decorators: [withKnobs, paddingDecorator]
 };
 
@@ -16,9 +16,6 @@ export const allPropsInteractive = () => ({
         "normal"
       )
     },
-    disabled: {
-      default: boolean("disabled", false)
-    },
     label: {
       default: text("label", "Label")
     },
@@ -27,14 +24,16 @@ export const allPropsInteractive = () => ({
     },
     description: {
       default: text("description", "Let us know your name.")
-    },
-    type: {
-      default: text("type", "text")
     }
   },
   data() {
     return {
-      value: ""
+      value: "",
+      options: [
+        { text: "One", value: "A" },
+        { text: "Two", value: "B" },
+        { text: "Three", value: "C" }
+      ]
     };
   },
   template: html`
@@ -45,14 +44,17 @@ export const allPropsInteractive = () => ({
       :description="description"
       :feedback="feedback"
     >
-      <vs-input
+      <vs-select
         id="input"
         v-model="value"
-        placeholder="yahaha"
-        :disabled="disabled"
         :validateStatus="validateStatus"
         :type="type"
-      />
+      >
+        <option value="" disabled selected>Select your option</option>
+        <option v-for="option in options" v-bind:value="option.value">
+          {{ option.text }}
+        </option>
+      </vs-select>
     </vs-form-item>
   `
 });

@@ -1,7 +1,3 @@
-@import "../utils/naming";
-@import "../theme/theme-config";
-@import "../mixins/input-state";
-
 .#{$prefix}input {
   @include input-state($input-normal-color-list);
 
@@ -11,10 +7,15 @@
   line-height: $input-line-height;
   border-radius: $input-border-radius;
   transition: $input-border-color-translation;
+  appearance: none;
 
   &:focus {
     background: $input-background--focus;
     outline: none;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
   }
 
   &--error {
@@ -58,7 +59,7 @@
     box-sizing: border-box;
     width: 100%;
 
-    .#{$prefix}-input {
+    .#{$prefix}input {
       width: 100%;
     }
   }

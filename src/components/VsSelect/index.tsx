@@ -7,38 +7,17 @@ import {
   validatableComponentProps,
   computeValidation
 } from "../../utils/validatable";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import VsIcon from "../VsIcon";
 
 const classNamePrefix = "vs-input";
 
-interface VsInputProps extends InputHTMLAttributes, ValidatableComponent {
-  /**
-   * input type
-   */
-  type:
-    | "text"
-    | "password"
-    | "email"
-    | "number"
-    | "url"
-    | "tel"
-    | "search"
-    | "range"
-    | "color"
-    | "date"
-    | "time"
-    | "datetime"
-    | "datetime-local"
-    | "month"
-    | "week";
-}
+interface VsSelectProps extends InputHTMLAttributes, ValidatableComponent {}
 
-const VsInput = createComponent<VsInputProps>({
+const VsInput = createComponent<VsSelectProps>({
   props: {
     value: {
       default: ""
-    },
-    type: {
-      default: "text"
     },
     ...validatableComponentProps
   },
@@ -72,44 +51,43 @@ const VsInput = createComponent<VsInputProps>({
 
       const classData = {
         [classNamePrefix]: true,
+        [`${classNamePrefix}--disabled`]: disabled,
         [`${classNamePrefix}--prefix`]: hasPrefix,
         [`${classNamePrefix}--suffix`]: hasSuffix,
         ...validationClassName
       };
 
       const inputElement = (
-        <input
+        <select
           class={classData}
           value={value}
-          type={type}
           disabled={disabled}
           aria-disabled={disabled}
           {...{ on: { ...ctx.listeners, input: eventInput } }}
           {...{ attrs: { ...ctx.attrs, ...validationAriaAttributes } }}
-        />
+        >
+          {ctx.slots.default()}
+        </select>
       );
 
-      if (hasSuffix || hasPrefix) {
-        const prefixElement = hasPrefix && (
-          <span class={`${classNamePrefix}__prefix`}>{prefix()}</span>
-        );
-        const suffixElement = hasSuffix && (
-          <span class={`${classNamePrefix}__suffix`}>
-            {suffix && suffix()}
-            {validationIcon}
-          </span>
-        );
+      const prefixElement = hasPrefix && (
+        <span class={`${classNamePrefix}__prefix`}>{prefix()}</span>
+      );
+      const suffixElement = (
+        <span class={`${classNamePrefix}__suffix`}>
+          <VsIcon name="arrow-down" />
+          {suffix && suffix()}
+          {validationIcon}
+        </span>
+      );
 
-        return (
-          <span class={`${classNamePrefix}__wrapper`}>
-            {prefixElement}
-            {inputElement}
-            {suffixElement}
-          </span>
-        );
-      } else {
-        return inputElement;
-      }
+      return (
+        <span class={`${classNamePrefix}__wrapper`}>
+          {prefixElement}
+          {inputElement}
+          {suffixElement}
+        </span>
+      );
     };
   }
 });
