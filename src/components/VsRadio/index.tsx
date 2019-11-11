@@ -35,7 +35,7 @@ const VsRadio = createComponent<VsRadioProps>({
         <label class={`${classNamePrefix}`}>
           <input
             class={`${classNamePrefix}__input`}
-            type="checkbox"
+            type="radio"
             disabled={disabled}
             checked={checked}
             {...{ on: { ...ctx.listeners, input: eventInput } }}

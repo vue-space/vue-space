@@ -10,11 +10,15 @@ import VsFormItem from "./components/VsFormItem";
 import VsRow from "./components/VsRow";
 import VsCol from "./components/VsCol";
 import VsCheckbox from "./components/VsCheckbox";
+import VsRadio from "./components/VsRadio";
 
 import VueCompositionApi from "@vue/composition-api";
 
 import { PluginFunction } from "vue";
-const Components = {
+const Components: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+} = {
   VsButton,
   VsThemeProvider,
   VsCircularProgress,
@@ -25,12 +29,13 @@ const Components = {
   VsRow,
   VsCol,
   VsSelect,
-  VsCheckbox
+  VsCheckbox,
+  VsRadio
 };
 
 const install: PluginFunction<never> = function(Vue) {
-  (Object.keys(Components) as Array<keyof typeof Components>).forEach(key => {
-    Vue.component(key as string, Components[key]);
+  Object.keys(Components).forEach(key => {
+    Vue.component(key, Components[key]);
   });
 
   Vue.use(VueCompositionApi);
