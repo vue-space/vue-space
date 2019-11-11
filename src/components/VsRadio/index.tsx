@@ -50,7 +50,7 @@ const VsRadio = createComponent<VsRadioProps>({
     }
 
     return (): VNode => {
-      const { disabled } = props;
+      const { disabled, name } = props;
 
       return (
         <label class={`${classNamePrefix}`}>
@@ -59,6 +59,7 @@ const VsRadio = createComponent<VsRadioProps>({
             type="radio"
             disabled={disabled}
             checked={judgeChecked()}
+            name={radioGroupContext?.groupProps.name ?? name}
             {...{ on: { ...ctx.listeners, input: eventInput } }}
             {...{ attrs: ctx.attrs }}
           />
