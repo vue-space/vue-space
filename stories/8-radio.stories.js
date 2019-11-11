@@ -15,13 +15,18 @@ export const allPropsInteractive = () => ({
   },
   data() {
     return {
-      checked: false
+      value: false
     };
   },
+  watch: {
+    value(val) {
+      console.log(val);
+    }
+  },
   template: html`
-    <div>
-      <vs-radio v-model="checked" :disabled="disabled">Label</vs-radio>
-      <vs-radio v-model="checked" :disabled="disabled">Label</vs-radio>
-    </div>
+    <vs-radio-group v-model="value" name="label">
+      <vs-radio value="a" :disabled="disabled">LabelA</vs-radio>
+      <vs-radio value="b" :disabled="disabled">LabelB</vs-radio>
+    </vs-radio-group>
   `
 });
