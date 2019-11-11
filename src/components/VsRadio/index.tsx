@@ -1,9 +1,11 @@
-import { createComponent } from "@vue/composition-api";
+import { createComponent, inject } from "@vue/composition-api";
 import { VNode } from "vue";
 import { InputHTMLAttributes, FormEvent } from "../../types/dom";
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import VsIcon from "../VsIcon";
+import {
+  RadioGroupProviderSymbol,
+  RadioGroupContextValue
+} from "../VsRadioGroup/RadioGroupProviderSymbol";
+import { VsRadioGroupProps } from "../VsRadioGroup";
 
 const classNamePrefix = "vs-radio";
 
@@ -13,6 +15,12 @@ const VsRadio = createComponent<VsRadioProps>({
   props: {
     checked: {
       default: false
+    },
+    value: {
+      default: null
+    },
+    name: {
+      default: null
     }
   },
   model: {
@@ -21,15 +29,28 @@ const VsRadio = createComponent<VsRadioProps>({
   },
   inheritAttrs: false,
   setup(props, ctx) {
+    const radioGroupContext =
+      inject<RadioGroupContextValue<VsRadioGroupProps>>(
+        RadioGroupProviderSymbol
+      ) || null;
+
     /**
      * for v-model
      */
     function eventInput(event: FormEvent<InputHTMLAttributes>): void {
       ctx.emit("input", event.currentTarget.checked);
+
+      radioGroupContext?.eventInput?.(props.value);
+    }
+
+    function judgeChecked(): boolean | undefined {
+      return (
+        radioGroupContext?.groupProps.value === props.value || props.checked
+      );
     }
 
     return (): VNode => {
-      const { disabled, checked } = props;
+      const { disabled } = props;
 
       return (
         <label class={`${classNamePrefix}`}>
@@ -37,7 +58,7 @@ const VsRadio = createComponent<VsRadioProps>({
             class={`${classNamePrefix}__input`}
             type="radio"
             disabled={disabled}
-            checked={checked}
+            checked={judgeChecked()}
             {...{ on: { ...ctx.listeners, input: eventInput } }}
             {...{ attrs: ctx.attrs }}
           />
