@@ -1,6 +1,3 @@
-@import "../utils/naming";
-@import "../theme/theme-config";
-
 @mixin input-state($color-list) {
   color: map-get($color-list, "font");
   background: map-get($color-list, $input-background-color-level);

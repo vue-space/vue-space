@@ -22,6 +22,7 @@ $default-font-size:                   14px !default;
 $default-border-size:                 2px !default;
 $small-border-radius:                 2px !default;
 $default-disabled-opacity:            0.6 !default;
+$default-inline-object-size:          16px;
 
 /* Translation
    ========================================================================== */
@@ -107,42 +108,42 @@ $dark-theme-button-danger-secondary-color:        map-get($danger-color-list, "7
 /* Circular Progress
    ========================================================================== */
 
-$circular-progress-small-size:       1em !default;
-$circular-progress-normal-size:      2em !default;
-$circular-progress-primary-color:    map-get($primary-color-list, "7") !default;
+$circular-progress-small-size:        1em !default;
+$circular-progress-normal-size:       2em !default;
+$circular-progress-primary-color:     map-get($primary-color-list, "7") !default;
 
 /* Input
    ========================================================================== */
 
-$input-border-radius:                2px !default;
-$input-border-width:                 2px !default;
-$input-padding-y:                    10px - $input-border-width !default;
-$input-padding-x:                    16px - $input-border-width !default;
-$input-padding:                      $input-padding-y $input-padding-x !default;
-$input-icon-section-width:           40px !default;
-$input-normal-color-list:            $primary-color-list !default;
-$input-error-color-list:             $danger-color-list !default;
-$input-success-color-list:           $success-color-list !default;
-$input-background-color-level:       "0" !default;
-$input-background--focus:            $white !default;
-$input-border-color-level:           "1" !default;
-$input-border-color-level--focus:    "5" !default;
-$input-line-height:                  $default-inline-line-height !default;
-$input-border-color-translation:     $default-border-color-translation !default;
+$input-border-radius:                 2px !default;
+$input-border-width:                  2px !default;
+$input-padding-y:                     10px - $input-border-width !default;
+$input-padding-x:                     16px - $input-border-width !default;
+$input-padding:                       $input-padding-y $input-padding-x !default;
+$input-icon-section-width:            40px !default;
+$input-normal-color-list:             $primary-color-list !default;
+$input-error-color-list:              $danger-color-list !default;
+$input-success-color-list:            $success-color-list !default;
+$input-background-color-level:        "0" !default;
+$input-background--focus:             $white !default;
+$input-border-color-level:            "1" !default;
+$input-border-color-level--focus:     "5" !default;
+$input-line-height:                   $default-inline-line-height !default;
+$input-border-color-translation:      $default-border-color-translation !default;
 
 /* FormItem
    ========================================================================== */
 
-$form-item-label-margin-bottom:      6px !default;
-$form-item-gutter-size:              16px !default;
-$form-feedback-success-color-list:   $input-success-color-list !default;
-$form-feedback-error-color-list:     $input-error-color-list !default;
-$form-feedback-color-level:          "9" !default;
-$form-feedback-font-size:            12px !default;
-$form-feedback-margin-top:           4px !default;
-$form-description-font-size:         12px !default;
-$form-description-margin-top:        4px !default;
-$form-description-font-color:        map-get($gray-color-list, "7") !default;
+$form-item-label-margin-bottom:       6px !default;
+$form-item-gutter-size:               16px !default;
+$form-feedback-success-color-list:    $input-success-color-list !default;
+$form-feedback-error-color-list:      $input-error-color-list !default;
+$form-feedback-color-level:           "9" !default;
+$form-feedback-font-size:             12px !default;
+$form-feedback-margin-top:            4px !default;
+$form-description-font-size:          12px !default;
+$form-description-margin-top:         4px !default;
+$form-description-font-color:         map-get($gray-color-list, "7") !default;
 
 /* Grid
    ========================================================================== */
@@ -162,5 +163,51 @@ $container-max-widths: (
   xl: 1140px
 ) !default;
 
-$grid-columns:                       12 !default;
-$grid-gutter-width:                  30px !default;
+$grid-columns:                        12 !default;
+$grid-gutter-width:                   30px !default;
+
+/* Checkbox
+   ========================================================================== */
+
+$checkbox-margin-right:               16px;
+$checkbox-opacity--disabled:          $default-disabled-opacity;
+
+$checkbox-icon-width:                 $default-inline-object-size !default;
+$checkbox-icon-height:                $default-inline-object-size !default;
+$checkbox-icon-margin-right:          6px !default;
+
+$checkbox-border-color-list:          $gray-color-list !default;
+$checkbox-border-color-level:         "6" !default;
+$checkbox-border-color:               map-get($checkbox-border-color-list, $checkbox-border-color-level) !default;
+$checkbox-border-color-list--active:  $primary-color-list !default;
+$checkbox-border-color-level--active: "5" !default;
+$checkbox-border-color--active:       map-get($primary-color-list, $checkbox-border-color-level--active) !default;
+$checkbox-border-width:               1px !default;
+$checkbox-border-radius:              3px !default;
+
+$checkbox-background-color--active:   $checkbox-border-color--active !default;
+$checkbox-inner-radius:               2px !default;
+$checkbox-inner-gutter:               1px !default;
+
+/* Radio
+   ========================================================================== */
+
+$radio-margin-right:                  16px !default;
+$radio-opacity--disabled:             $default-disabled-opacity !default;
+
+$radio-icon-width:                    $default-inline-object-size !default;
+$radio-icon-height:                   $default-inline-object-size !default;
+$radio-icon-margin-right:             6px !default;
+
+$radio-border-color-list:             $gray-color-list !default;
+$radio-border-color-level:            "6" !default;
+$radio-border-color:                  map-get($checkbox-border-color-list, $checkbox-border-color-level) !default;
+
+$radio-border-color-list--active:     $primary-color-list !default;
+$radio-border-color-level--active:    "5" !default;
+$radio-border-color--active:          map-get($primary-color-list, $checkbox-border-color-level--active) !default;
+$radio-background-color--active:      $checkbox-border-color--active !default;
+
+$radio-border-width:                  1px !default;
+$radio-border-radius:                 10000px !default;
+$radio-inner-gutter:                  1px !default;
