@@ -13,7 +13,8 @@ export const normalForm = () => ({
       form: {
         normalForm: "",
         errorForm: "",
-        successForm: ""
+        successForm: "",
+        checkbox: false
       }
     };
   },
@@ -54,6 +55,11 @@ export const normalForm = () => ({
           placeholder="Success Form"
           validateStatus="success"
         />
+      </vs-form-item>
+      <vs-form-item>
+        <vs-checkbox v-model="form.checkbox"
+          >I accept every license</vs-checkbox
+        >
       </vs-form-item>
       <vs-form-item>
         <vs-button type="submit" variant="primary">Submit</vs-button>

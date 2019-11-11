@@ -3,7 +3,7 @@ import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { paddingDecorator } from "./utils/decorators";
 
 export default {
-  title: "vs-checkbox",
+  title: "vs-radio",
   decorators: [withKnobs, paddingDecorator]
 };
 
@@ -20,8 +20,8 @@ export const allPropsInteractive = () => ({
   },
   template: html`
     <div>
-      <vs-checkbox v-model="checked" :disabled="disabled">Label</vs-checkbox>
-      <vs-checkbox v-model="checked" :disabled="disabled">Label</vs-checkbox>
+      <vs-radio v-model="checked" :disabled="disabled">Label</vs-radio>
+      <vs-radio v-model="checked" :disabled="disabled">Label</vs-radio>
     </div>
   `
 });
