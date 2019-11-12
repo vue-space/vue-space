@@ -84,8 +84,16 @@ pre {
  * Remove the gray background on active links in IE 10.
  */
 
-a {
+a,
+:link,
+:visited {
+  color: $blue-6;
+  text-decoration: none;
   background-color: transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 /**
