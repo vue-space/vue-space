@@ -14,7 +14,8 @@ export const normalForm = () => ({
         normalForm: "",
         errorForm: "",
         successForm: "",
-        checkbox: false
+        checkbox: false,
+        radio: "a"
       }
     };
   },
@@ -44,6 +45,12 @@ export const normalForm = () => ({
           validateStatus="error"
         />
       </vs-form-item>
+      <vs-form-item label="Radio Input">
+        <vs-radio-group v-model="form.radio" name="label">
+          <vs-radio value="a">LabelA</vs-radio>
+          <vs-radio value="b">LabelB</vs-radio>
+        </vs-radio-group>
+      </vs-form-item>
       <vs-form-item
         label="Success Form"
         labelFor="success-form"
@@ -57,9 +64,9 @@ export const normalForm = () => ({
         />
       </vs-form-item>
       <vs-form-item>
-        <vs-checkbox v-model="form.checkbox"
-          >I accept every license</vs-checkbox
-        >
+        <vs-checkbox v-model="form.checkbox">
+          I accept every license
+        </vs-checkbox>
       </vs-form-item>
       <vs-form-item>
         <vs-button type="submit" variant="primary">Submit</vs-button>

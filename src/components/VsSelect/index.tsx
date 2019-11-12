@@ -31,10 +31,8 @@ const VsInput = createComponent<VsSelectProps>({
     }
 
     return (): VNode => {
-      const { disabled, type, validateStatus, value } = props;
+      const { disabled, validateStatus, value } = props;
       const { prefix, suffix } = ctx.slots;
-
-      const isPassword = type === "password";
 
       const {
         validationClassName,
@@ -45,9 +43,7 @@ const VsInput = createComponent<VsSelectProps>({
       } = computeValidation(classNamePrefix, validateStatus);
 
       const hasPrefix = Boolean(prefix);
-      const hasSuffix = Boolean(
-        suffix || isPassword || isValidateSuccess || isValidateError
-      );
+      const hasSuffix = Boolean(suffix || isValidateSuccess || isValidateError);
 
       const classData = {
         [classNamePrefix]: true,
