@@ -4,7 +4,7 @@ import VsButton from "../src/components/VsButton";
 import { paddingDecorator } from "./utils/decorators";
 
 export default {
-  title: "vs-grid",
+  title: "vs-breadcrumb",
   component: VsButton,
   decorators: [withKnobs, paddingDecorator]
 };
@@ -13,10 +13,10 @@ export const allPropsInteractive = () => ({
   props: {},
   methods: {},
   template: html`
-    <vs-row>
-      <vs-col md="4">a</vs-col>
-      <vs-col md="4">a</vs-col>
-      <vs-col md="4">a</vs-col>
-    </vs-row>
+    <vs-breadcrumb>
+      <a href="/">WAI-ARIA Authoring Practices 1.1</a>
+      <a href="/">Design Patterns</a>
+      <a href="/">Breadcrumb Pattern</a>
+    </vs-breadcrumb>
   `
 });
