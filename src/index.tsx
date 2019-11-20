@@ -13,6 +13,7 @@ import VsCheckbox from "./components/VsCheckbox";
 import VsRadio from "./components/VsRadio";
 import VsRadioGroup from "./components/VsRadioGroup";
 import VsBreadcrumb from "./components/VsBreadcrumb";
+import VsAvatar from "./components/VsAvatar";
 
 import VueCompositionApi from "@vue/composition-api";
 
@@ -34,7 +35,8 @@ const Components: {
   VsCheckbox,
   VsRadio,
   VsRadioGroup,
-  VsBreadcrumb
+  VsBreadcrumb,
+  VsAvatar
 };
 
 const install: PluginFunction<never> = function(Vue) {
