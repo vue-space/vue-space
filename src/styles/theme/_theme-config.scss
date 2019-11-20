@@ -211,3 +211,14 @@ $radio-background-color--active:      $checkbox-border-color--active !default;
 $radio-border-width:                  1px !default;
 $radio-border-radius:                 10000px !default;
 $radio-inner-gutter:                  1px !default;
+
+/* Avatar
+   ========================================================================== */
+$avatar-size--small:                  38px !default;
+$avatar-size--normal:                 80px !default;
+$avatar-size--large:                  160px !default;
+$avatar-background:                   map-get($primary-color-list, "1") !default;
+$avatar-color:                        map-get($primary-color-list, "5") !default;
+$avatar-font-size--small:             20px !default;
+$avatar-font-size--normal:            43px !default;
+$avatar-font-size--large:             94px !default;
