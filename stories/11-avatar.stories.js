@@ -1,7 +1,6 @@
 import { html } from "./utils/editor";
-import VsButton from "../src/components/VsButton";
 import { paddingDecorator } from "./utils/decorators";
-import { radios, boolean, withKnobs, text } from "@storybook/addon-knobs";
+import { radios, withKnobs, text } from "@storybook/addon-knobs";
 
 export default {
   title: "vs-avatar",
