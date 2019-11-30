@@ -16,12 +16,15 @@
     width: $radio-icon-width;
     height: $radio-icon-height;
     margin-right: $radio-icon-margin-right;
-    vertical-align: text-top;
     background: transparent;
     border-color: $radio-border-color;
     border-style: solid;
     border-width: $radio-border-width;
     border-radius: $radio-border-radius;
+  }
+
+  &__label {
+    vertical-align: top;
   }
 
   &__input:checked + &__icon {
