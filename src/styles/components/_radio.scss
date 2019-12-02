@@ -11,11 +11,11 @@
   }
 
   &__icon {
-    position: relative;
+    position: absolute;
+    top: 2px;
     display: inline-block;
     width: $radio-icon-width;
     height: $radio-icon-height;
-    margin-right: $radio-icon-margin-right;
     background: transparent;
     border-color: $radio-border-color;
     border-style: solid;
@@ -24,7 +24,7 @@
   }
 
   &__label {
-    vertical-align: top;
+    padding-left: $radio-icon-width + $radio-icon-margin-right;
   }
 
   &__input:checked + &__icon {
