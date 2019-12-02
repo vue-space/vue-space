@@ -1,5 +1,3 @@
-@import "../colors/color-palette";
-
 /* Color Map
    ========================================================================== */
 
@@ -17,7 +15,7 @@ $default-focus-shadow-color-level:    "2" !default;
 $default-focus-shadow:                $default-focus-shadow-size map-get($primary-color-list, $default-focus-shadow-color-level) !default;
 $danger-focus-shadow:                 $default-focus-shadow-size map-get($danger-color-list, $default-focus-shadow-color-level) !default;
 $success-focus-shadow:                $default-focus-shadow-size map-get($success-color-list, $default-focus-shadow-color-level) !default;
-$default-inline-line-height:          1.5 !default;
+$default-inline-line-height:          1.6 !default;
 $default-font-size:                   14px !default;
 $default-border-size:                 2px !default;
 $small-border-radius:                 2px !default;
@@ -211,3 +209,14 @@ $radio-background-color--active:      $checkbox-border-color--active !default;
 $radio-border-width:                  1px !default;
 $radio-border-radius:                 10000px !default;
 $radio-inner-gutter:                  1px !default;
+
+/* Avatar
+   ========================================================================== */
+$avatar-size--small:                  38px !default;
+$avatar-size--normal:                 80px !default;
+$avatar-size--large:                  160px !default;
+$avatar-background:                   map-get($primary-color-list, "1") !default;
+$avatar-color:                        map-get($primary-color-list, "5") !default;
+$avatar-font-size--small:             20px !default;
+$avatar-font-size--normal:            43px !default;
+$avatar-font-size--large:             94px !default;

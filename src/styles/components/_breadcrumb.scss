@@ -1,0 +1,14 @@
+.#{$prefix}breadcrumb {
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__separator {
+    margin: 0 10px;
+  }
+}

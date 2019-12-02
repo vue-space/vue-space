@@ -11,17 +11,20 @@
   }
 
   &__icon {
-    position: relative;
+    position: absolute;
+    top: 2px;
     display: inline-block;
     width: $checkbox-icon-width;
     height: $checkbox-icon-height;
-    margin-right: $checkbox-icon-margin-right;
-    vertical-align: text-top;
     background: transparent;
     border-color: $checkbox-border-color;
     border-style: solid;
     border-width: $checkbox-border-width;
     border-radius: $checkbox-border-radius;
+  }
+
+  &__label {
+    padding-left: $checkbox-icon-width + $checkbox-icon-margin-right;
   }
 
   &__input:checked + &__icon {
