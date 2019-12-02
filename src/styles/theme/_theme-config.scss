@@ -1,5 +1,3 @@
-@import "../colors/color-palette";
-
 /* Color Map
    ========================================================================== */
 
@@ -17,7 +15,7 @@ $default-focus-shadow-color-level:    "2" !default;
 $default-focus-shadow:                $default-focus-shadow-size map-get($primary-color-list, $default-focus-shadow-color-level) !default;
 $danger-focus-shadow:                 $default-focus-shadow-size map-get($danger-color-list, $default-focus-shadow-color-level) !default;
 $success-focus-shadow:                $default-focus-shadow-size map-get($success-color-list, $default-focus-shadow-color-level) !default;
-$default-inline-line-height:          1.5 !default;
+$default-inline-line-height:          1.6 !default;
 $default-font-size:                   14px !default;
 $default-border-size:                 2px !default;
 $small-border-radius:                 2px !default;
