@@ -16,11 +16,12 @@ $default-focus-shadow:                $default-focus-shadow-size map-get($primar
 $danger-focus-shadow:                 $default-focus-shadow-size map-get($danger-color-list, $default-focus-shadow-color-level) !default;
 $success-focus-shadow:                $default-focus-shadow-size map-get($success-color-list, $default-focus-shadow-color-level) !default;
 $default-inline-line-height:          1.6 !default;
-$default-font-size:                   14px !default;
+$default-font-size:                   font-size('normal') !default;
 $default-border-size:                 2px !default;
 $small-border-radius:                 2px !default;
 $default-disabled-opacity:            0.6 !default;
 $default-inline-object-size:          16px;
+$default-link-color:                  map-get($primary-color-list, "6");
 
 /* Translation
    ========================================================================== */
@@ -137,9 +138,9 @@ $form-item-gutter-size:               16px !default;
 $form-feedback-success-color-list:    $input-success-color-list !default;
 $form-feedback-error-color-list:      $input-error-color-list !default;
 $form-feedback-color-level:           "9" !default;
-$form-feedback-font-size:             12px !default;
+$form-feedback-font-size:             font-size('caption') !default;
 $form-feedback-margin-top:            4px !default;
-$form-description-font-size:          12px !default;
+$form-description-font-size:          font-size('caption') !default;
 $form-description-margin-top:         4px !default;
 $form-description-font-color:         map-get($gray-color-list, "7") !default;
 
@@ -212,6 +213,7 @@ $radio-inner-gutter:                  1px !default;
 
 /* Avatar
    ========================================================================== */
+
 $avatar-size--small:                  38px !default;
 $avatar-size--normal:                 80px !default;
 $avatar-size--large:                  160px !default;
