@@ -14,6 +14,7 @@ import VsRadio from "./components/VsRadio";
 import VsRadioGroup from "./components/VsRadioGroup";
 import VsBreadcrumb from "./components/VsBreadcrumb";
 import VsAvatar from "./components/VsAvatar";
+import VsNotification from "./components/VsNotification";
 
 import VueCompositionApi from "@vue/composition-api";
 
@@ -36,7 +37,8 @@ const Components: {
   VsRadio,
   VsRadioGroup,
   VsBreadcrumb,
-  VsAvatar
+  VsAvatar,
+  VsNotification
 };
 
 const install: PluginFunction<never> = function(Vue) {
