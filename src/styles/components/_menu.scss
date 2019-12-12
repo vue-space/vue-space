@@ -27,7 +27,7 @@
         color: $menu-item-color--active;
         background: $menu-item-background--hover;
 
-        & ~ i {
+        i {
           color: $menu-item-color--active;
         }
 
@@ -69,21 +69,13 @@
       margin: $menu-caption-margin;
     }
 
-    &--icon {
+    i {
       position: relative;
+      top: 2px;
+      margin-right: $menu-icon-margin-right;
+      line-height: 0;
 
-      i {
-        position: absolute;
-        top: 53%;
-        left: $menu-item-padding-x;
-        transform: translateY(-50%);
-
-        @extend .#{$prefix}text-icon;
-      }
-
-      a {
-        padding-left: $menu-item-padding-x + 2 * font-size("normal");
-      }
+      @extend .#{$prefix}text-icon;
     }
 
     .active-class,
@@ -91,7 +83,7 @@
       color: $menu-item-color--active;
       background-color: $menu-item-background--active;
 
-      & ~ i {
+      i {
         color: $menu-item-color--active;
       }
 
