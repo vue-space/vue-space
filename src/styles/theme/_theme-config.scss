@@ -17,7 +17,7 @@ $default-focus-shadow-color-level:    "2" !default;
 $default-focus-shadow:                $default-focus-shadow-size map-get($primary-color-list, $default-focus-shadow-color-level) !default;
 $danger-focus-shadow:                 $default-focus-shadow-size map-get($danger-color-list, $default-focus-shadow-color-level) !default;
 $success-focus-shadow:                $default-focus-shadow-size map-get($success-color-list, $default-focus-shadow-color-level) !default;
-$default-inline-line-height:          1.6 !default;
+$default-inline-line-height:          1.6rem !default;
 $default-font-size:                   font-size('normal') !default;
 $default-border-size:                 2px !default;
 $small-border-radius:                 2px !default;
@@ -249,5 +249,25 @@ $menu-item-padding-x:                 28px !default;
 $menu-item-padding-y:                 14px !default;
 $menu-item-padding:                   $menu-item-padding-y $menu-item-padding-x !default;
 $menu-item-margin-bottom:             6px !default;
+$menu-icon-margin-right:              8px !default;
 
-$menu-item-icon-size:                 font-size('normal');
+/* Tab
+   ========================================================================== */
+
+$tab-logo-color-level:                "6" !default;
+$tab-logo-color:                      map-get($gray-color-list, $menu-logo-color-level) !default;
+$tab-logo-color--active:              map-get($primary-color-list, $menu-logo-color-level) !default;
+
+$tab-item-color-level:                "9" !default;
+$tab-item-color:                      map-get($gray-color-list, $menu-item-color-level) !default;
+$tab-item-color--active:              map-get($primary-color-list, $menu-item-color-level) !default;
+
+$tab-item-padding-x:                  24px !default;
+$tab-item-padding-y:                  12px !default;
+$tab-item-padding:                    $tab-item-padding-y $tab-item-padding-x !default;
+
+$tab-item-bar-width:                  80%;
+$tab-item-bar-height:                 4px;
+$tab-item-bar-background--active:     $tab-logo-color--active;
+$tab-item-bar-background--hover:      color.scale($tab-item-bar-background--active, $alpha: -70%) !default;
+$tab-icon-margin-right:               6px !default;
