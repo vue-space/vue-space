@@ -1,0 +1,57 @@
+$offset: 187;
+$duration: 1.4s;
+
+.#{$prefix}circular-progress {
+  animation: rotator $duration linear infinite;
+
+  &__path {
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash $duration ease-in-out infinite;
+  }
+
+  &--small {
+    width: $circular-progress-small-size;
+    height: $circular-progress-small-size;
+  }
+
+  &--normal {
+    width: $circular-progress-normal-size;
+    height: $circular-progress-normal-size;
+  }
+
+  &--primary-color {
+    & circle {
+      stroke: $circular-progress-primary-color;
+    }
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}

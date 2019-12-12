@@ -1,0 +1,74 @@
+.#{$prefix}input {
+  @include input-state($input-normal-color-list);
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: $input-padding;
+  line-height: $input-line-height;
+  border-radius: $input-border-radius;
+  transition: $input-border-color-translation;
+  appearance: none;
+
+  &:focus {
+    background: $input-background--focus;
+    outline: none;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
+  }
+
+  &--error {
+    @include input-state($input-error-color-list);
+  }
+
+  &--success {
+    @include input-state($input-success-color-list);
+  }
+
+  &--suffix {
+    padding-right: $input-icon-section-width;
+  }
+
+  &--prefix {
+    padding-right: $input-icon-section-width;
+  }
+
+  &__prefix,
+  &__suffix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    i {
+      font-size: $input-icon-section-width / 2;
+    }
+  }
+
+  &__prefix {
+    left: $input-icon-section-width / 4;
+  }
+
+  &__suffix {
+    right: $input-icon-section-width / 4;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+
+    .#{$prefix}input {
+      width: 100%;
+    }
+  }
+
+  &--error + &__suffix {
+    color: map-get($input-error-color-list, $input-border-color-level--focus);
+  }
+
+  &--success + &__suffix {
+    color: map-get($input-success-color-list, $input-border-color-level--focus);
+  }
+}

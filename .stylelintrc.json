@@ -1,15 +1,16 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-rational-order",
-    "stylelint-config-prettier"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-config-rational-order"],
   "plugins": [
+    "stylelint-scss",
     "stylelint-order",
     "stylelint-declaration-block-no-ignored-properties"
   ],
   "rules": {
     "no-descending-specificity": null,
-    "plugin/declaration-block-no-ignored-properties": true
+    "plugin/declaration-block-no-ignored-properties": true,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": null,
+    "scss/dollar-variable-colon-space-before": "never",
+    "font-family-no-missing-generic-family-keyword": null
   }
 }

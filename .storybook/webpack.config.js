@@ -42,25 +42,7 @@ module.exports = async ({ config, mode }) => {
     test: /\.(ts|tsx)$/,
     loaders: [
       {
-        loader: "babel-loader",
-        options: {
-          presets: [
-            "vca-jsx",
-            [
-              "@vue/babel-preset-jsx",
-              {
-                injectH: false
-              }
-            ],
-            "@babel/env",
-            "@babel/typescript"
-          ],
-          plugins: [
-            "@babel/plugin-proposal-numeric-separator",
-            "@babel/proposal-class-properties",
-            "@babel/proposal-object-rest-spread"
-          ]
-        }
+        loader: "babel-loader"
       }
     ]
   });

@@ -1,0 +1,104 @@
+.#{$prefix}menu {
+  padding: $menu-padding;
+  overflow: hidden;
+  background: $menu-background;
+
+  ol {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .#{$prefix}menu-item {
+    margin: $menu-item-margin-bottom 0;
+
+    a,
+    :link,
+    :visited {
+      position: relative;
+      display: block;
+      padding: $menu-item-padding;
+      color: $menu-item-color;
+      text-decoration: none;
+      border-radius: $menu-item-border-radius 0 0 $menu-item-border-radius;
+      cursor: pointer;
+
+      &:hover {
+        color: $menu-item-color--active;
+        background: $menu-item-background--hover;
+
+        & ~ i {
+          color: $menu-item-color--active;
+        }
+
+        &::before,
+        &::after {
+          border-color: transparent $menu-item-background--hover transparent transparent;
+        }
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        box-sizing: border-box;
+        width: 4 * $menu-item-border-radius;
+        height: 4 * $menu-item-border-radius;
+        border-color: transparent;
+        border-style: solid;
+        border-width: $menu-item-border-radius;
+        border-radius: 100%;
+        content: "";
+      }
+
+      &::before {
+        top: - 3 * $menu-item-border-radius;
+        right: - $menu-item-border-radius;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        right: - $menu-item-border-radius;
+        bottom: - 3 * $menu-item-border-radius;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &--caption {
+      @extend .#{$menu-caption-font-class};
+
+      margin: $menu-caption-margin;
+    }
+
+    &--icon {
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 53%;
+        left: $menu-item-padding-x;
+        transform: translateY(-50%);
+
+        @extend .#{$prefix}text-icon;
+      }
+
+      a {
+        padding-left: $menu-item-padding-x + 2 * font-size("normal");
+      }
+    }
+
+    .active-class,
+    a:focus {
+      color: $menu-item-color--active;
+      background-color: $menu-item-background--active;
+
+      & ~ i {
+        color: $menu-item-color--active;
+      }
+
+      &::before,
+      &::after {
+        border-color: transparent $menu-item-background--active transparent transparent;
+      }
+    }
+  }
+}

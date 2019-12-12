@@ -1,12 +1,12 @@
 import { html } from "./utils/editor";
 import { radios, boolean, withKnobs, text } from "@storybook/addon-knobs";
-import Centered from "@storybook/addon-centered/vue";
 import VsButton from "../src/components/VsButton";
+import { paddingDecorator } from "./utils/decorators";
 
 export default {
   title: "vs-button",
   component: VsButton,
-  decorators: [withKnobs, Centered]
+  decorators: [withKnobs, paddingDecorator]
 };
 
 export const allPropsInteractive = () => ({
@@ -21,13 +21,14 @@ export const allPropsInteractive = () => ({
         "normal"
       )
     },
-    type: {
+    variant: {
       default: radios(
-        "type",
+        "variant",
         {
           primary: "primary",
           secondary: "secondary",
-          danger: "danger"
+          danger: "danger",
+          "danger-secondary": "danger-secondary"
         },
         "secondary"
       )
@@ -38,19 +39,27 @@ export const allPropsInteractive = () => ({
     disabled: {
       default: boolean("disabled", false)
     },
+    block: {
+      default: boolean("block", false)
+    },
     slotValue: {
       default: text("slotValue", "default button")
     }
   },
+  methods: {
+    greet: function(event) {
+      console.log(event);
+    }
+  },
   template: html`
-    <vs-theme-provider>
-      <vs-button
-        v-bind:size="size"
-        :type="type"
-        :loading="loading"
-        :disabled="disabled"
-        >{{slotValue}}</vs-button
-      >
-    </vs-theme-provider>
+    <vs-button
+      :size="size"
+      :variant="variant"
+      :loading="loading"
+      :disabled="disabled"
+      :block="block"
+      @click="greet"
+      >{{slotValue}}</vs-button
+    >
   `
 });

@@ -1,0 +1,31 @@
+.#{$prefix}form-item {
+  & + & {
+    margin-top: $form-item-gutter-size;
+  }
+
+  &__label {
+    display: block;
+    padding-bottom: $form-item-label-margin-bottom;
+    line-height: $default-inline-line-height;
+  }
+
+  &__feedback {
+    margin-top: $form-feedback-margin-top;
+    font-size: $form-feedback-font-size;
+    line-height: $default-inline-line-height;
+
+    &--error {
+      color: map-get($input-error-color-list, "9");
+    }
+
+    &--success {
+      color: map-get($input-success-color-list, "9");
+    }
+  }
+
+  &__description {
+    margin-top: $form-description-margin-top;
+    color: $form-description-font-color;
+    font-size: $form-description-font-size;
+  }
+}

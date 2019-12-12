@@ -1,12 +1,14 @@
 import resolve from "rollup-plugin-node-resolve";
 import autoprefixer from "autoprefixer";
 import postcss from "rollup-plugin-postcss";
+import cssnano from "cssnano";
 import babel from "rollup-plugin-babel";
 import external from "rollup-plugin-peer-deps-external";
 import { camelCase } from "lodash";
 import path from "path";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { name, version, license } from "./package.json";
+import { sizeSnapshot } from "rollup-plugin-size-snapshot";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const base = path.resolve(__dirname, ".");
@@ -45,11 +47,12 @@ export default {
   ],
   external: [],
   plugins: [
+    sizeSnapshot(),
     peerDepsExternal(),
     postcss({
-      plugins: [autoprefixer],
+      plugins: [autoprefixer, cssnano],
       sourceMap: true,
-      extract: true,
+      extract: "./dist/vue-space.css",
       extensions: [".scss", ".css"]
     }),
     babel({ extensions, include: ["src/**/*"], exclude: "node_modules/**" }),

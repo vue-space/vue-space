@@ -1,0 +1,70 @@
+/* font-stack
+   ========================================================================== */
+
+$default-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', SimSun, sans-serif;
+
+/* typography-config
+   ========================================================================== */
+
+// [name]        [size]      [weight]     [light]      [dark]
+$typography-map: (
+  'h1':          48px        bold        $gray-9      $white,
+  'h2':          38px        bold        $gray-9      $white,
+  'h3':          24px        normal      $gray-9      $gray-1,
+  'h4':          20px        normal      $gray-8      $gray-1,
+  'h5':          16px        normal      $gray-8      $gray-1,
+  'h6':          14px        normal      $gray-8      $gray-1,
+  'larger':      16px        normal      $gray-8      $gray-1,
+  'normal':      14px        normal      $gray-8      $gray-4,
+  'caption':     12px        normal      $gray-6      $gray-5,
+  'icon':        20px        normal      $gray-6      $gray-5
+) !default;
+
+@each $name, $config-list in $typography-map {
+  $size:                   nth($config-list, 1);
+  $weight:                 nth($config-list, 2);
+  $color--light-theme:     nth($config-list, 3);
+  $color--dark-theme:      nth($config-list, 4);
+
+  .#{$prefix}text-#{$name} {
+    color: $color--light-theme;
+    font-weight: $weight;
+    font-size: $size;
+
+    .#{$light-theme} & {
+      color: $color--light-theme;
+    }
+
+    .#{$dark-theme} & {
+      color: $color--dark-theme;
+    }
+  }
+}
+
+body {
+  @extend .#{$prefix}text-normal;
+}
+
+@for $index from 1 to 6 {
+  h#{$index} {
+    @extend .#{$prefix}text-h#{$index};
+  }
+}
+
+@function font-size($name) {
+  @return nth(map-get($typography-map, $name),1);
+}
+
+@function font-weight($name) {
+  @return nth(map-get($typography-map, $name),2);
+}
+
+@function font-color-light-theme($name) {
+  @return nth(map-get($typography-map, $name),3);
+}
+
+@function font-color-dark-theme($name) {
+  @return nth(map-get($typography-map, $name),4);
+}

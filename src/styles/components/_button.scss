@@ -1,28 +1,30 @@
-@import "../utils/naming.scss";
-@import "../theme/theme-config.scss";
-
-.#{$prefix}-btn {
+.#{$prefix}btn {
   font-size: $button-font-size;
+  line-height: $button-default-line-height;
+  text-align: center;
+  background: transparent;
   border-radius: $button-border-radius;
   cursor: pointer;
   transition: $color-translation;
+
+  & + & {
+    margin-left: $button-gutter-size;
+  }
 
   &:focus {
     outline: none;
   }
 
   &--secondary {
-    padding: $button-default-padding-y - $button-secondary-border-width
-      $button-default-padding-x - $button-secondary-border-width;
     color: $button-secondary-color;
     border: $button-secondary-border-width solid $button-secondary-border-color;
 
-    &:hover {
+    &:hover:not([disabled]) {
       color: $button-secondary-color--hover;
       background: $button-secondary-background--hover;
     }
 
-    &:active {
+    &:active:not([disabled]) {
       background: $button-secondary-background--active;
       border-color: $button-secondary-background--active;
     }
@@ -34,17 +36,108 @@
     background: $button-primary-background;
     border: 0;
 
-    &:hover {
+    &:hover:not([disabled]) {
       background: $button-primary-background--hover;
     }
 
-    &:active {
+    &:active:not([disabled]) {
       background: $button-primary-background--active;
     }
   }
 
+  &--danger {
+    color: $button-danger-color;
+    background: $button-danger-background;
+    border: 0;
+
+    &:hover:not([disabled]) {
+      background: $button-danger-background--hover;
+    }
+
+    &:active:not([disabled]) {
+      background: $button-danger-background--active;
+    }
+  }
+
+  &--danger-secondary {
+    color: $button-danger-secondary-color;
+    border:
+      $button-danger-secondary-border-width solid
+      $button-danger-secondary-border-color;
+
+    &:hover:not([disabled]) {
+      color: $button-danger-secondary-color--hover;
+      background: $button-danger-secondary-background--hover;
+    }
+
+    &:active:not([disabled]) {
+      background: $button-danger-secondary-background--active;
+      border-color: $button-danger-secondary-background--active;
+    }
+  }
+
+  // default focus
   &--secondary:focus,
   &--primary:focus {
     box-shadow: $default-focus-shadow;
+  }
+
+  // danger focus
+  &--danger:focus,
+  &--danger-secondary:focus {
+    box-shadow: $danger-focus-shadow;
+  }
+
+  // primary style normal size
+  &--primary#{&}--normal,
+  &--danger#{&}--normal {
+    padding: $button-default-padding;
+  }
+
+  // secondary style normal size
+  &--secondary#{&}--normal,
+  &--danger-secondary#{&}--normal {
+    padding:
+      $button-default-padding-y - $button-secondary-border-width
+      $button-default-padding-x - $button-secondary-border-width;
+  }
+
+  // primary style small size
+  &--primary#{&}--small,
+  &--danger#{&}--small {
+    padding: $button-small-padding;
+  }
+
+  // secondary style small size
+  &--secondary#{&}--small,
+  &--danger-secondary#{&}--small {
+    padding:
+      $button-small-padding-y - $button-secondary-border-width
+      $button-small-padding-x - $button-secondary-border-width;
+  }
+
+  &[disabled] {
+    opacity: $default-disabled-opacity;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    margin-left: -3px;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    vertical-align: -0.14em;
+    transition:
+      margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      margin-right 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
