@@ -12,7 +12,7 @@
     "jest/globals": true
   },
   "parserOptions": {
-    "project": "./tsconfig.json",
+    "project": "./.storybook/tsconfig.json",
     "sourceType": "module",
     "extraFileExtensions": [".scss"]
   },
