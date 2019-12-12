@@ -6,7 +6,8 @@
   "web": "dist/vue-space.js",
   "typings": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "postinstall": "shx rm -rf node_modules/@types/react && echo 'workaround for libs importing @types/react/global.d.ts on vue project'",
