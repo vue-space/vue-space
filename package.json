@@ -11,6 +11,7 @@
   "scripts": {
     "postinstall": "shx rm -rf node_modules/@types/react && echo 'workaround for libs importing @types/react/global.d.ts on vue project'",
     "build": "tsc --build && rollup -c ./rollup.config.js",
+    "pb": "npm run build && np",
     "storybook": "start-storybook -p 6006 --debug-webpack",
     "build-storybook": "build-storybook",
     "lint:fix": "eslint --fix ./{src,stories}/**/*.{tsx,ts,js}",
