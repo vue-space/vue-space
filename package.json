@@ -1,6 +1,6 @@
 {
   "name": "vue-space",
-  "version": "0.1.3",
+  "version": "0.1.4-0",
   "description": "",
   "main": "dist/vue-space.common.js",
   "web": "dist/vue-space.js",
