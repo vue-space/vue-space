@@ -18,7 +18,8 @@ $typography-map: (
   'h6':          14px        normal      $gray-8      $gray-1,
   'larger':      16px        normal      $gray-8      $gray-1,
   'normal':      14px        normal      $gray-8      $gray-4,
-  'caption':     12px        normal      $gray-7      $gray-5
+  'caption':     12px        normal      $gray-6      $gray-5,
+  'icon':        20px        normal      $gray-6      $gray-5
 ) !default;
 
 @each $name, $config-list in $typography-map {

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /* Color Map
    ========================================================================== */
 
@@ -19,6 +21,7 @@ $default-inline-line-height:          1.6 !default;
 $default-font-size:                   font-size('normal') !default;
 $default-border-size:                 2px !default;
 $small-border-radius:                 2px !default;
+$normal-border-radius:                8px !default;
 $default-disabled-opacity:            0.6 !default;
 $default-inline-object-size:          16px;
 $default-link-color:                  map-get($primary-color-list, "6");
@@ -222,3 +225,29 @@ $avatar-color:                        map-get($primary-color-list, "5") !default
 $avatar-font-size--small:             20px !default;
 $avatar-font-size--normal:            43px !default;
 $avatar-font-size--large:             94px !default;
+
+/* Menu
+   ========================================================================== */
+
+$menu-background:                     $white !default;
+$menu-padding:                        0 0 0 24px !default;
+$menu-caption-font-class:             #{$prefix}text-caption !default;
+$menu-caption-margin:                 20px 27px 12px;
+
+$menu-logo-color-level:               "6" !default;
+$menu-logo-color:                     map-get($gray-color-list, $menu-logo-color-level) !default;
+$menu-logo-color--active:             map-get($primary-color-list, $menu-logo-color-level) !default;
+
+$menu-item-color-level:               "9" !default;
+$menu-item-color:                     map-get($gray-color-list, $menu-item-color-level) !default;
+$menu-item-color--active:             map-get($primary-color-list, $menu-item-color-level) !default;
+
+$menu-item-background--active:        map-get($primary-color-list, "0") !default;
+$menu-item-background--hover:         color.scale($menu-item-background--active, $alpha: -70%) !default;
+$menu-item-border-radius:             $normal-border-radius !default;
+$menu-item-padding-x:                 28px !default;
+$menu-item-padding-y:                 14px !default;
+$menu-item-padding:                   $menu-item-padding-y $menu-item-padding-x !default;
+$menu-item-margin-bottom:             6px !default;
+
+$menu-item-icon-size:                 font-size('normal');
