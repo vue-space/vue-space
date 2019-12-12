@@ -10,7 +10,7 @@
     "src"
   ],
   "scripts": {
-    "postinstall": "shx rm -rf node_modules/@types/react && echo 'workaround for libs importing @types/react/global.d.ts on vue project'",
+    "workaround": "shx rm -rf node_modules/@types/react && echo 'workaround for libs importing @types/react/global.d.ts on vue project'",
     "build": "tsc --build && rollup -c ./rollup.config.js",
     "pb": "npm run build && np --no-tests",
     "storybook": "start-storybook -p 6006 --debug-webpack",

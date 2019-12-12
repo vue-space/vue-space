@@ -16,6 +16,8 @@ import VsBreadcrumb from "./components/VsBreadcrumb";
 import VsAvatar from "./components/VsAvatar";
 import VsMenu from "./components/VsMenu";
 import VsMenuItem from "./components/VsMenu/VsMenuItem";
+import VsTab from "./components/VsTab";
+import VsTabItem from "./components/VsTab/VsTabItem";
 
 import VueCompositionApi from "@vue/composition-api";
 
@@ -40,7 +42,9 @@ const Components: {
   VsBreadcrumb,
   VsAvatar,
   VsMenu,
-  VsMenuItem
+  VsMenuItem,
+  VsTab,
+  VsTabItem
 };
 
 const install: PluginFunction<never> = function(Vue) {
