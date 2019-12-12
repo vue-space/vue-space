@@ -52,7 +52,7 @@ export default {
     postcss({
       plugins: [autoprefixer, cssnano],
       sourceMap: true,
-      extract: true,
+      extract: "./dist/vue-space.css",
       extensions: [".scss", ".css"]
     }),
     babel({ extensions, include: ["src/**/*"], exclude: "node_modules/**" }),
