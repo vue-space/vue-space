@@ -1,11 +1,9 @@
-import { html } from "./utils/editor";
-import { withKnobs } from "@storybook/addon-knobs";
-import VsButton from "../src/components/VsButton";
-import { paddingDecorator } from "./utils/decorators";
+import { html } from './utils/editor';
+import { withKnobs } from '@storybook/addon-knobs';
+import { paddingDecorator } from './utils/decorators';
 
 export default {
-  title: "vs-grid",
-  component: VsButton,
+  title: 'vs-grid',
   decorators: [withKnobs, paddingDecorator]
 };
 

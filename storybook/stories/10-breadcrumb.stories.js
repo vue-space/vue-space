@@ -1,11 +1,9 @@
-import { html } from "./utils/editor";
-import { withKnobs } from "@storybook/addon-knobs";
-import VsButton from "../src/components/VsButton";
-import { paddingDecorator } from "./utils/decorators";
+import { html } from './utils/editor';
+import { withKnobs } from '@storybook/addon-knobs';
+import { paddingDecorator } from './utils/decorators';
 
 export default {
-  title: "vs-breadcrumb",
-  component: VsButton,
+  title: 'vs-breadcrumb',
   decorators: [withKnobs, paddingDecorator]
 };
 
