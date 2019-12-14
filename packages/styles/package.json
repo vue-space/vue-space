@@ -1,0 +1,28 @@
+{
+  "name": "@vue-space/styles",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.css",
+  "style": "dist/index.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vue-space/vue-space.git"
+  },
+  "homepage": "https://github.com/vue-space/vue-space",
+  "keywords": [
+    "vue",
+    "components"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vue-space/vue-space/issues"
+  }
+}
