@@ -1,26 +1,26 @@
-import { createComponent } from "@vue/composition-api";
-import { VNode } from "vue";
+import { createComponent } from '@vue/composition-api';
+import { VNode } from 'vue';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import VsCircularProgress from "../VsCircularProgress";
-import { RouterLinkProps } from "../../types/RouterLinkProps";
-import { ButtonHTMLAttributes } from "../../types/dom";
+import VsCircularProgress from '../VsCircularProgress';
+import { RouterLinkProps } from '../../types/RouterLinkProps';
+import { ButtonHTMLAttributes } from '../../types/dom';
 
-const classNamePrefix = "vs-btn";
+const classNamePrefix = 'vs-btn';
 
 interface VsButtonProps extends ButtonHTMLAttributes, RouterLinkProps {
   /**
    * Size of button
    */
-  size: "small" | "normal";
+  size: 'small' | 'normal';
   /**
    * Type of button
    */
-  variant: "primary" | "secondary" | "danger" | "danger-secondary";
+  variant: 'primary' | 'secondary' | 'danger' | 'danger-secondary';
   /**
    * Specify the HTML tag.
    * eg: tag = "div"
    */
-  tag: keyof HTMLElementTagNameMap | "router-link";
+  tag: keyof HTMLElementTagNameMap | 'router-link';
   /**
    * Is loading
    */
@@ -38,13 +38,13 @@ interface VsButtonProps extends ButtonHTMLAttributes, RouterLinkProps {
 const VsButton = createComponent<VsButtonProps>({
   props: {
     size: {
-      default: "normal"
+      default: 'normal'
     },
     variant: {
-      default: "secondary"
+      default: 'secondary'
     },
     tag: {
-      default: "button"
+      default: 'button'
     },
     loading: {
       default: false
@@ -64,9 +64,10 @@ const VsButton = createComponent<VsButtonProps>({
       nodes?: VNode[]
     ): boolean | string | VNode[] | undefined {
       const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
-      if (nodes?.length === 1 && rxTwoCNChar.test(nodes[0]?.text || "")) {
-        const twoChar = nodes[0].text ?? "";
-        return twoChar.split("").join(" ");
+      const raw = nodes?.[0]?.text?.trim() ?? '';
+      if (nodes?.length === 1 && rxTwoCNChar.test(raw)) {
+        const twoChar = raw;
+        return twoChar.split('').join(' ');
       }
       return nodes;
     }
