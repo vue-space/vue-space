@@ -16,6 +16,8 @@
     "@storybook/addons": "^5.2.8",
     "@storybook/vue": "^5.2.8",
     "@vue-space/core": "*",
-    "@vue-space/styles": "*"
+    "@vue-space/styles": "*",
+    "vee-validate": "^3.2.0",
+    "vue": "^2.6.11"
   }
 }
