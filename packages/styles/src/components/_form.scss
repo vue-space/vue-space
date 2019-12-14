@@ -1,7 +1,5 @@
 .#{$prefix}form-item {
-  & + & {
-    margin-top: $form-item-gutter-size;
-  }
+  margin-bottom: $form-item-gutter-size;
 
   &__label {
     display: block;
