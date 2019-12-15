@@ -1,9 +1,9 @@
-import { html } from "./utils/editor";
-import { paddingDecorator } from "./utils/decorators";
-import { action } from "@storybook/addon-actions";
+import { html } from './utils/editor';
+import { paddingDecorator } from './utils/decorators';
+import { action } from '@storybook/addon-actions';
 
 export default {
-  title: "vs-form",
+  title: 'vs-form',
   decorators: [paddingDecorator]
 };
 
@@ -11,16 +11,17 @@ export const normalForm = () => ({
   data() {
     return {
       form: {
-        normalForm: "",
-        errorForm: "",
-        successForm: "",
+        normalForm: '',
+        errorForm: '',
+        successForm: '',
+        todoForm: '',
         checkbox: false,
-        radio: "a"
+        radio: 'a'
       }
     };
   },
   methods: {
-    eventSubmit: action("submit")
+    eventSubmit: action('submit')
   },
   template: html`
     <vs-form @submit.prevent="eventSubmit">
@@ -45,6 +46,24 @@ export const normalForm = () => ({
           validateStatus="error"
         />
       </vs-form-item>
+
+      <validation-provider name="yahahas" rules="required" v-slot="{ errors }">
+        <vs-form-item
+          label="Error Form"
+          labelFor="error-form"
+          :validateStatus="errors[0]&&'error'"
+          description="Let us know your name."
+          :feedback="errors[0]"
+        >
+          <vs-input
+            id="error-form"
+            v-model="form.todoForm"
+            placeholder="error form"
+            :validateStatus="errors[0]&&'error'"
+          />
+        </vs-form-item>
+      </validation-provider>
+
       <vs-form-item label="Radio Input">
         <vs-radio-group v-model="form.radio" name="label">
           <vs-radio value="a">LabelA</vs-radio>
