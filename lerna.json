@@ -1,5 +1,8 @@
 {
   "packages": ["packages/*", "storybook"],
   "version": "0.0.0",
-  "npmClient": "yarn"
+  "npmClient": "yarn",
+  "publishConfig": {
+    "access": "public"
+  }
 }
