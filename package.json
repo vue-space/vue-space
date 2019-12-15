@@ -86,8 +86,8 @@
     }
   },
   "lint-staged": {
-    "{stories,src}/**/*.scss": "stylelint --syntax=scss",
-    "{stories,src}/**/*.{ts,tsx,js}": [
+    "{stories,packages}/**/*.scss": "stylelint --syntax=scss",
+    "{stories,packages}/**/*.{ts,tsx,js}": [
       "eslint --fix",
       "git add"
     ]
