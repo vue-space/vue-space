@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.basic.json",
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "compilerOptions": {
+    "declarationDir": "dist/types",
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "typeRoots": ["./src/types"]
+  }
+}
