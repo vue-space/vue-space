@@ -21,9 +21,6 @@ yarn-error.log*
 *.sln
 *.sw*
 
-# no npm
-package-lock.json
-
 # no size snapshot
 .size-snapshot.json
 
