@@ -1,6 +1,6 @@
 {
   "name": "@vue-space/storybook",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "scripts": {
     "watch": "start-storybook -p 6006 --debug-webpack",
     "build": "build-storybook"
@@ -15,8 +15,8 @@
     "@storybook/addon-storysource": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/vue": "^5.2.8",
-    "@vue-space/core": "*",
-    "@vue-space/styles": "*",
+    "@vue-space/core": "^0.0.1-alpha.0",
+    "@vue-space/styles": "^0.0.1-alpha.0",
     "vee-validate": "^3.2.0",
     "vue": "^2.6.11"
   }
