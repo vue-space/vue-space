@@ -26,13 +26,31 @@ $default-disabled-opacity:            0.6 !default;
 $default-inline-object-size:          16px;
 $default-link-color:                  map-get($primary-color-list, "6");
 
+/* Shadow
+   ========================================================================== */
+
+$box-shadow-sm:                       0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !default;
+$box-shadow-md:                       0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !default;
+$box-shadow-lg:                       0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
+$box-shadow-xl:                       0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !default;
+
+/* Space
+   ========================================================================== */
+
+$space-sm:                            8px !default;
+$space-md:                            16px !default;
+$space-lg:                            24px !default;
+$space-xl:                            48px !default;
+
 /* Translation
    ========================================================================== */
+
 $default-translation-duration:        200ms !default;
 $default-border-color-translation:    border-color $default-translation-duration !default;
 $color-translation:
   background $default-translation-duration,
-  color $default-translation-duration, $default-border-color-translation !default;
+  color $default-translation-duration,
+  $default-border-color-translation !default;
 
 /* Button
    ========================================================================== */
@@ -271,3 +289,9 @@ $tab-item-bar-height:                 4px;
 $tab-item-bar-background--active:     $tab-logo-color--active;
 $tab-item-bar-background--hover:      color.scale($tab-item-bar-background--active, $alpha: -70%) !default;
 $tab-icon-margin-right:               6px !default;
+
+/* Paper
+   ========================================================================== */
+
+$paper-background:                    $white;
+$paper-border-radius:                 $normal-border-radius;

@@ -1,0 +1,33 @@
+import { createComponent } from "@vue/composition-api";
+import { VNode } from "vue";
+import { HTMLAttributes } from "../../types/dom";
+
+const classPrefix = "vs-";
+
+interface VsPaperProps extends HTMLAttributes {
+  shadow: "sm" | "md" | "lg" | "xl" | "none";
+  padding: "sm" | "md" | "lg" | "xl" | "none";
+}
+
+const VsPaper = createComponent<VsPaperProps>({
+  props: {
+    shadow: {
+      default: "md"
+    },
+    padding: {
+      default: "md"
+    }
+  },
+  setup(props, ctx) {
+    return (): VNode => {
+      const classData = {
+        [`${classPrefix}paper`]: true,
+        [`${classPrefix}shadow-${props.shadow}`]: true,
+        [`${classPrefix}padding-${props.padding}`]: true
+      };
+      return <div class={classData}>{ctx.slots.default()}</div>;
+    };
+  }
+});
+
+export default VsPaper;
