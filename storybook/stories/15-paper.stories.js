@@ -32,10 +32,21 @@ export const allPropsInteractive = () => ({
         },
         'md'
       )
+    },
+    borderRadius: {
+      default: radios(
+        'borderRadius',
+        {
+          sm: 'sm',
+          md: 'md',
+          lg: 'lg'
+        },
+        'md'
+      )
     }
   },
   template: html`
-    <vs-paper :shadow="shadow" :padding="padding">
+    <vs-paper :shadow="shadow" :padding="padding" :border-radius="borderRadius">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit Assumenda, quia
       temporibus eveniet a libero incidunt suscipit Quidem, ipsam illum quis sed
       voluptatum quae eum fugit earumLorem ipsum dolor sit amet, consectetur
@@ -43,7 +54,14 @@ export const allPropsInteractive = () => ({
       suscipit Quidem, ipsam illum quis sed voluptatum quae eum fugit earumLorem
       ipsum dolor sit amet, consectetur adipisicing elit Assumenda, quia
       temporibus eveniet a libero incidunt suscipit Quidem, ipsam illum quis sed
-      voluptatum quae eum fugit earum
+      voluptatum quae eum fugit earum Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit Assumenda, quia temporibus eveniet a libero incidunt
+      suscipit Quidem, ipsam illum quis sed voluptatum quae eum fugit earumLorem
+      ipsum dolor sit amet, consectetur adipisicing elit Assumenda, quia
+      temporibus eveniet a libero incidunt suscipit Quidem, ipsam illum quis sed
+      voluptatum quae eum fugit earumLorem ipsum dolor sit amet, consectetur
+      adipisicing elit Assumenda, quia temporibus eveniet a libero incidunt
+      suscipit Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
     </vs-paper>
   `
 });
