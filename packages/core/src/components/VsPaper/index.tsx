@@ -7,6 +7,7 @@ const classPrefix = "vs-";
 interface VsPaperProps extends HTMLAttributes {
   shadow: "sm" | "md" | "lg" | "xl" | "none";
   padding: "sm" | "md" | "lg" | "xl" | "none";
+  borderRadius: "sm" | "md" | "lg" | "none";
 }
 
 const VsPaper = createComponent<VsPaperProps>({
@@ -16,6 +17,9 @@ const VsPaper = createComponent<VsPaperProps>({
     },
     padding: {
       default: "md"
+    },
+    borderRadius: {
+      default: "md"
     }
   },
   setup(props, ctx) {
@@ -23,7 +27,8 @@ const VsPaper = createComponent<VsPaperProps>({
       const classData = {
         [`${classPrefix}paper`]: true,
         [`${classPrefix}shadow-${props.shadow}`]: true,
-        [`${classPrefix}padding-${props.padding}`]: true
+        [`${classPrefix}padding-${props.padding}`]: true,
+        [`${classPrefix}border-radius-${props.borderRadius}`]: true
       };
       return <div class={classData}>{ctx.slots.default()}</div>;
     };
