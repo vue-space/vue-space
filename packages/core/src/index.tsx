@@ -18,6 +18,11 @@ import VsMenuItem from "./components/VsMenu/VsMenuItem";
 import VsTab from "./components/VsTab";
 import VsTabItem from "./components/VsTab/VsTabItem";
 import VsPaper from "./components/VsPaper";
+import VsTable from "./components/VsTable";
+import VsTableBody from "./components/VsTable/VsTableBody";
+import VsTableCell from "./components/VsTable/VsTableCell";
+import VsTableHead from "./components/VsTable/VsTableHead";
+import VsTableRow from "./components/VsTable/VsTableRow";
 
 import VueCompositionApi from "@vue/composition-api";
 
@@ -45,7 +50,12 @@ const Components: {
   VsMenuItem,
   VsTab,
   VsTabItem,
-  VsPaper
+  VsPaper,
+  VsTable,
+  VsTableBody,
+  VsTableCell,
+  VsTableHead,
+  VsTableRow
 };
 
 const install: PluginFunction<never> = function(Vue) {

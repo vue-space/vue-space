@@ -1,5 +1,15 @@
 .#{$prefix}padding-none {
-  padding: 0;
+  padding: 0 !important;
+}
+
+.#{$prefix}no-padding-y {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.#{$prefix}no-padding-x {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
 .#{$prefix}padding-sm {

@@ -1,0 +1,13 @@
+.#{$prefix}table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &-cell {
+    padding: $table-cell-padding;
+    border-bottom: $table-cell-border;
+  }
+
+  thead th {
+    border-bottom: $table-head-cell-border;
+  }
+}

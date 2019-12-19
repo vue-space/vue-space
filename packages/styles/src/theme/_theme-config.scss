@@ -300,3 +300,10 @@ $tab-icon-margin-right:               $space-sm !default;
    ========================================================================== */
 
 $paper-background:                    $white !default;
+
+/* Table
+   ========================================================================== */
+
+$table-cell-padding:                  $space-md !default;
+$table-cell-border:                   1px solid map-get($gray-color-list, "3");
+$table-head-cell-border:              2px solid map-get($gray-color-list, "3");
