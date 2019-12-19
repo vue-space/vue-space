@@ -27,7 +27,7 @@ const VsRow = createComponent<VsRowProps>({
 
       return (
         <div class={classData} {...{ on: ctx.listeners }}>
-          {ctx.slots.default()}
+          {ctx.slots.default?.()}
         </div>
       );
     };

@@ -30,7 +30,7 @@ const VsPaper = createComponent<VsPaperProps>({
         [`${classPrefix}padding-${props.padding}`]: true,
         [`${classPrefix}border-radius-${props.borderRadius}`]: true
       };
-      return <div class={classData}>{ctx.slots.default()}</div>;
+      return <div class={classData}>{ctx.slots.default?.()}</div>;
     };
   }
 });

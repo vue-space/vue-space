@@ -62,7 +62,7 @@ const VsInput = createComponent<VsSelectProps>({
           {...{ on: { ...ctx.listeners, input: eventInput } }}
           {...{ attrs: { ...ctx.attrs, ...validationAriaAttributes } }}
         >
-          {ctx.slots.default()}
+          {ctx.slots.default?.()}
         </select>
       );
 

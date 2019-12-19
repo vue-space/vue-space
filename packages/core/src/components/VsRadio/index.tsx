@@ -66,7 +66,9 @@ const VsRadio = createComponent<VsRadioProps>({
           <span class={`${classNamePrefix}__icon`}>
             <span class={`${classNamePrefix}__icon-inner`} />
           </span>
-          <span class={`${classNamePrefix}__label`}>{ctx.slots.default()}</span>
+          <span class={`${classNamePrefix}__label`}>
+            {ctx.slots.default?.()}
+          </span>
         </label>
       );
     };

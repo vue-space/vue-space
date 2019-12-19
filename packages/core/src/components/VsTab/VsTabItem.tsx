@@ -15,7 +15,7 @@ const VsTabItem = createComponent<VsTabItemProps>({
       };
       return (
         <li class={classData}>
-          {ctx.slots.default({ activeClass: "active-class" })}
+          {ctx.slots.default?.({ activeClass: "active-class" })}
         </li>
       );
     };

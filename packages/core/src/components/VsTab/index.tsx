@@ -11,7 +11,7 @@ const VsTab = createComponent<VsTabProps>({
     return (): VNode => {
       return (
         <nav class={classNamePrefix}>
-          <ol>{ctx.slots.default()}</ol>
+          <ol>{ctx.slots.default?.()}</ol>
         </nav>
       );
     };

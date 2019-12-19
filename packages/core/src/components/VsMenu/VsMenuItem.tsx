@@ -23,7 +23,7 @@ const VsMenuItem = createComponent<VsMenuItemProps>({
       };
       return (
         <li class={classData} aria-invalid={props.caption}>
-          {ctx.slots.default({ activeClass: "active-class" })}
+          {ctx.slots.default?.({ activeClass: "active-class" })}
         </li>
       );
     };

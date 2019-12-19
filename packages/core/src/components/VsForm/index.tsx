@@ -9,7 +9,7 @@ const VsForm = createComponent<VsFormProps>({
   props: {},
   setup(props, ctx) {
     return (): VNode => (
-      <form {...{ on: ctx.listeners }}>{ctx.slots.default()}</form>
+      <form {...{ on: ctx.listeners }}>{ctx.slots.default?.()}</form>
     );
   }
 });

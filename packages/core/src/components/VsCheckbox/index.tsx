@@ -46,7 +46,9 @@ const VsCheckbox = createComponent<VsCheckboxProps>({
               <VsIcon name="checkmark" />
             </span>
           </span>
-          <span class={`${classNamePrefix}__label`}>{ctx.slots.default()}</span>
+          <span class={`${classNamePrefix}__label`}>
+            {ctx.slots.default?.()}
+          </span>
         </label>
       );
     };
