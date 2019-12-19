@@ -1,7 +1,6 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { HTMLAttributes } from "../../types/dom";
-import VsIcon from "../VsIcon";
 
 const classNamePrefix = "vs-tab-item";
 
