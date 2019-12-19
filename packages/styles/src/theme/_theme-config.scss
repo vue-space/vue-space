@@ -20,24 +20,48 @@ $success-focus-shadow:                $default-focus-shadow-size map-get($succes
 $default-inline-line-height:          1.6 !default;
 $default-font-size:                   font-size('normal') !default;
 $default-border-size:                 2px !default;
-$small-border-radius:                 2px !default;
-$normal-border-radius:                8px !default;
 $default-disabled-opacity:            0.6 !default;
 $default-inline-object-size:          16px;
 $default-link-color:                  map-get($primary-color-list, "6");
 
+/* Shadow
+   ========================================================================== */
+
+$box-shadow-sm:                       0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !default;
+$box-shadow-md:                       0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !default;
+$box-shadow-lg:                       0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
+$box-shadow-xl:                       0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !default;
+
+/* Space
+   ========================================================================== */
+
+$space-sm:                            8px !default;
+$space-md:                            16px !default;
+$space-lg:                            24px !default;
+$space-xl:                            48px !default;
+
+/* Space
+   ========================================================================== */
+
+$border-radius-sm:                    2px !default;
+$border-radius-md:                    4px !default;
+$border-radius-lg:                    8px !default;
+$border-radius-xl:                    16px !default;
+
 /* Translation
    ========================================================================== */
+
 $default-translation-duration:        200ms !default;
 $default-border-color-translation:    border-color $default-translation-duration !default;
 $color-translation:
   background $default-translation-duration,
-  color $default-translation-duration, $default-border-color-translation !default;
+  color $default-translation-duration,
+  $default-border-color-translation !default;
 
 /* Button
    ========================================================================== */
 
-$button-border-radius:                $small-border-radius !default;
+$button-border-radius:                $border-radius-sm !default;
 $button-font-size:                    $default-font-size !default;
 $button-default-line-height:          $default-inline-line-height !default;
 $button-disabled-opacity:             $default-disabled-opacity !default;
@@ -117,7 +141,7 @@ $circular-progress-primary-color:     map-get($primary-color-list, "7") !default
 /* Input
    ========================================================================== */
 
-$input-border-radius:                 2px !default;
+$input-border-radius:                 $border-radius-sm !default;
 $input-border-width:                  2px !default;
 $input-padding-y:                     10px - $input-border-width !default;
 $input-padding-x:                     16px - $input-border-width !default;
@@ -136,15 +160,15 @@ $input-border-color-translation:      $default-border-color-translation !default
 /* FormItem
    ========================================================================== */
 
-$form-item-label-margin-bottom:       6px !default;
-$form-item-gutter-size:               16px !default;
+$form-item-label-margin-bottom:       $space-sm !default;
+$form-item-gutter-size:               $space-md !default;
 $form-feedback-success-color-list:    $input-success-color-list !default;
 $form-feedback-error-color-list:      $input-error-color-list !default;
 $form-feedback-color-level:           "9" !default;
 $form-feedback-font-size:             font-size('caption') !default;
-$form-feedback-margin-top:            4px !default;
+$form-feedback-margin-top:            $space-sm / 2 !default;
 $form-description-font-size:          font-size('caption') !default;
-$form-description-margin-top:         4px !default;
+$form-description-margin-top:         $space-sm / 2 !default;
 $form-description-font-color:         map-get($gray-color-list, "7") !default;
 
 /* Grid
@@ -166,17 +190,17 @@ $container-max-widths: (
 ) !default;
 
 $grid-columns:                        12 !default;
-$grid-gutter-width:                   30px !default;
+$grid-gutter-width:                   $space-lg !default;
 
 /* Checkbox
    ========================================================================== */
 
-$checkbox-margin-right:               16px;
+$checkbox-margin-right:               $space-md;
 $checkbox-opacity--disabled:          $default-disabled-opacity;
 
 $checkbox-icon-width:                 $default-inline-object-size !default;
 $checkbox-icon-height:                $default-inline-object-size !default;
-$checkbox-icon-margin-right:          6px !default;
+$checkbox-icon-margin-right:          $space-sm !default;
 
 $checkbox-border-color-list:          $gray-color-list !default;
 $checkbox-border-color-level:         "6" !default;
@@ -194,12 +218,12 @@ $checkbox-inner-gutter:               1px !default;
 /* Radio
    ========================================================================== */
 
-$radio-margin-right:                  16px !default;
+$radio-margin-right:                  $space-md !default;
 $radio-opacity--disabled:             $default-disabled-opacity !default;
 
 $radio-icon-width:                    $default-inline-object-size !default;
 $radio-icon-height:                   $default-inline-object-size !default;
-$radio-icon-margin-right:             6px !default;
+$radio-icon-margin-right:             $space-sm !default;
 
 $radio-border-color-list:             $gray-color-list !default;
 $radio-border-color-level:            "6" !default;
@@ -230,9 +254,9 @@ $avatar-font-size--large:             94px !default;
    ========================================================================== */
 
 $menu-background:                     $white !default;
-$menu-padding:                        0 0 0 24px !default;
+$menu-padding:                        0 0 0 $space-lg !default;
 $menu-caption-font-class:             #{$prefix}text-caption !default;
-$menu-caption-margin:                 20px 27px 12px;
+$menu-caption-margin:                 $space-md $space-md $space-sm;
 
 $menu-logo-color-level:               "6" !default;
 $menu-logo-color:                     map-get($gray-color-list, $menu-logo-color-level) !default;
@@ -244,12 +268,12 @@ $menu-item-color--active:             map-get($primary-color-list, $menu-item-co
 
 $menu-item-background--active:        map-get($primary-color-list, "0") !default;
 $menu-item-background--hover:         color.scale($menu-item-background--active, $alpha: -70%) !default;
-$menu-item-border-radius:             $normal-border-radius !default;
-$menu-item-padding-x:                 28px !default;
-$menu-item-padding-y:                 14px !default;
+$menu-item-border-radius:             $border-radius-lg !default;
+$menu-item-padding-x:                 $space-lg !default;
+$menu-item-padding-y:                 $space-md !default;
 $menu-item-padding:                   $menu-item-padding-y $menu-item-padding-x !default;
-$menu-item-margin-bottom:             6px !default;
-$menu-icon-margin-right:              8px !default;
+$menu-item-margin-bottom:             $space-sm !default;
+$menu-icon-margin-right:              $space-sm !default;
 
 /* Tab
    ========================================================================== */
@@ -262,12 +286,24 @@ $tab-item-color-level:                "9" !default;
 $tab-item-color:                      map-get($gray-color-list, $menu-item-color-level) !default;
 $tab-item-color--active:              map-get($primary-color-list, $menu-item-color-level) !default;
 
-$tab-item-padding-x:                  24px !default;
-$tab-item-padding-y:                  12px !default;
+$tab-item-padding-x:                  $space-lg !default;
+$tab-item-padding-y:                  $space-md !default;
 $tab-item-padding:                    $tab-item-padding-y $tab-item-padding-x !default;
 
-$tab-item-bar-width:                  80%;
-$tab-item-bar-height:                 4px;
-$tab-item-bar-background--active:     $tab-logo-color--active;
+$tab-item-bar-width:                  80% !default;
+$tab-item-bar-height:                 4px !default;
+$tab-item-bar-background--active:     $tab-logo-color--active !default;
 $tab-item-bar-background--hover:      color.scale($tab-item-bar-background--active, $alpha: -70%) !default;
-$tab-icon-margin-right:               6px !default;
+$tab-icon-margin-right:               $space-sm !default;
+
+/* Paper
+   ========================================================================== */
+
+$paper-background:                    $white !default;
+
+/* Table
+   ========================================================================== */
+
+$table-cell-padding:                  $space-md !default;
+$table-cell-border:                   1px solid map-get($gray-color-list, "3");
+$table-head-cell-border:              2px solid map-get($gray-color-list, "3");

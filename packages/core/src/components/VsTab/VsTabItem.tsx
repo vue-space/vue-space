@@ -1,7 +1,6 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { HTMLAttributes } from "../../types/dom";
-import VsIcon from "../VsIcon";
 
 const classNamePrefix = "vs-tab-item";
 
@@ -15,7 +14,7 @@ const VsTabItem = createComponent<VsTabItemProps>({
       };
       return (
         <li class={classData}>
-          {ctx.slots.default({ activeClass: "active-class" })}
+          {ctx.slots.default?.({ activeClass: "active-class" })}
         </li>
       );
     };

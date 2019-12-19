@@ -37,7 +37,7 @@ const VsRadioProps = createComponent<VsRadioGroupProps>({
     return (): VNode => {
       return (
         <div {...{ on: { ...ctx.listeners, input: eventInput } }}>
-          {ctx.slots.default()}
+          {ctx.slots.default?.()}
         </div>
       );
     };

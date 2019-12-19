@@ -1,7 +1,6 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { HTMLAttributes } from "../../types/dom";
-import VsIcon from "../VsIcon";
 
 const classNamePrefix = "vs-menu-item";
 
@@ -23,7 +22,7 @@ const VsMenuItem = createComponent<VsMenuItemProps>({
       };
       return (
         <li class={classData} aria-invalid={props.caption}>
-          {ctx.slots.default({ activeClass: "active-class" })}
+          {ctx.slots.default?.({ activeClass: "active-class" })}
         </li>
       );
     };

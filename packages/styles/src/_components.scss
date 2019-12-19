@@ -1,5 +1,9 @@
 @import "./components/addon/centered";
 @import "./components/addon/visible";
+@import "./components/addon/space";
+@import "./components/addon/shadow";
+@import "./components/addon/border";
+@import "./components/addon/align";
 @import "./components/button";
 @import "./components/circular-progress";
 @import "./components/input";
@@ -10,4 +14,6 @@
 @import "./components/breadcrumb";
 @import "./components/avatar";
 @import "./components/menu";
-@import "./components/tab"
+@import "./components/tab";
+@import "./components/table";
+@import "./components/paper";
