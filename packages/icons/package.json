@@ -1,0 +1,30 @@
+{
+  "name": "@vue-space/icons",
+  "version": "0.0.1-alpha.0",
+  "description": "",
+  "files": [
+    "dist",
+    "raw"
+  ],
+  "scripts": {
+    "watch": "rollup -cw ./rollup.config.js",
+    "build": "node ./build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vue-space/vue-space.git"
+  },
+  "homepage": "https://github.com/vue-space/vue-space",
+  "keywords": [
+    "vue",
+    "components"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vue-space/vue-space/issues"
+  },
+  "devDependencies": {
+    "svg-to-vue": "^0.6.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
