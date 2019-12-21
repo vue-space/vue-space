@@ -1,6 +1,7 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { InputHTMLAttributes, FormEvent } from "../../types/dom";
+import VsIconArrowDown from "@vue-space/icons/dist/VsIconArrowDown";
 
 import {
   ValidatableComponent,
@@ -71,7 +72,7 @@ const VsInput = createComponent<VsSelectProps>({
       );
       const suffixElement = (
         <span class={`${classNamePrefix}__suffix`}>
-          <VsIcon name="arrow-down" />
+          <VsIconArrowDown />
           {suffix && suffix()}
           {validationIcon}
         </span>

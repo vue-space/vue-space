@@ -2,12 +2,13 @@
   "name": "@vue-space/icons",
   "version": "0.0.1-alpha.0",
   "description": "",
+  "typings": "dist/types",
   "files": [
     "dist",
     "raw"
   ],
   "scripts": {
-    "watch": "rollup -cw ./rollup.config.js",
+    "watch": "node ./build.js",
     "build": "node ./build.js"
   },
   "repository": {
@@ -24,7 +25,10 @@
     "url": "https://github.com/vue-space/vue-space/issues"
   },
   "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "rimraf": "^3.0.0",
     "svg-to-vue": "^0.6.0",
+    "svgo": "^1.3.2",
     "vue-template-compiler": "^2.6.11"
   }
 }
