@@ -2,7 +2,8 @@
   "name": "@vue-space/icons",
   "version": "0.0.1-alpha.0",
   "description": "",
-  "typings": "dist/types",
+  "typings": "dist/types/index.d.ts",
+  "main": "dist/index.js",
   "files": [
     "dist",
     "raw"

@@ -78,14 +78,19 @@ async function buildAllSVG(prefix, inputDir, outputDir, typeRawDir) {
     );
 
     fs.writeFile(
-      path.join(typeRawDir, `${filename}.d.ts`),
-      `import {FunctionalComponentOptions} from 'vue'
-declare const ${filename} : FunctionalComponentOptions;
+      path.join(outputDir, `${filename}.d.ts`),
+      `declare const ${filename}: any;
 export default ${filename};
 `
     );
+
     fs.appendFile(
-      path.join(typeRawDir, 'index.d.ts'),
+      path.join(outputDir, 'index.js'),
+      `export { default as ${filename} } from './${filename}'
+`
+    );
+    fs.appendFile(
+      path.join(outputDir, 'index.d.ts'),
       `export { default as ${filename} } from './${filename}'
 `
     );
