@@ -16,7 +16,9 @@ const VsThemeProvider = createComponent<VsThemeProviderProps>({
   },
   setup(props, ctx) {
     return (): VNode => {
-      return <div class={`vs-theme-${props.theme}`}>{ctx.slots.default()}</div>;
+      return (
+        <div class={`vs-theme-${props.theme}`}>{ctx.slots.default?.()}</div>
+      );
     };
   }
 });

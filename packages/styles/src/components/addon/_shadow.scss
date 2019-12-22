@@ -1,0 +1,19 @@
+.#{$prefix}shadow-none {
+  box-shadow: none;
+}
+
+.#{$prefix}shadow-sm {
+  box-shadow: $box-shadow-sm;
+}
+
+.#{$prefix}shadow-md {
+  box-shadow: $box-shadow-md;
+}
+
+.#{$prefix}shadow-lg {
+  box-shadow: $box-shadow-lg;
+}
+
+.#{$prefix}shadow-xl {
+  box-shadow: $box-shadow-xl;
+}

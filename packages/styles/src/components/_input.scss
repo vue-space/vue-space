@@ -40,8 +40,9 @@
     top: 50%;
     transform: translateY(-50%);
 
-    i {
-      font-size: $input-icon-section-width / 2;
+    .#{$prefix}icon {
+      display: block;
+      width: $input-icon-section-width / 2;
     }
   }
 

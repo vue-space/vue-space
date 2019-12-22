@@ -78,7 +78,7 @@ const VsFormItem = createComponent<VsFormItemProps>({
       return (
         <div class={classNamePrefix}>
           {labelElement}
-          {ctx.slots.default()}
+          {ctx.slots.default?.()}
           {feedbackElement}
           {descriptionElement}
         </div>

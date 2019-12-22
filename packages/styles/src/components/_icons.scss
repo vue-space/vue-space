@@ -1,0 +1,9 @@
+.#{$prefix}icon {
+  display: inline-block;
+  color: inherit;
+  line-height: 0;
+  text-transform: none;
+  vertical-align: -0.25em;
+
+  @extend .#{$prefix}text-icon;
+}

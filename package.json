@@ -7,6 +7,7 @@
     "dev": "lerna run watch --stream --parallel",
     "bootstrap": "lerna bootstrap",
     "lint:fix": "eslint --fix ./{src,.storybook}/**/*.{tsx,ts,js}",
+    "release": "npm run build && lerna publish",
     "commit": "git-cz",
     "commit:doc": "git-cz --no-verify",
     "lint-staged": "lint-staged -d"
@@ -85,8 +86,8 @@
     }
   },
   "lint-staged": {
-    "{stories,src}/**/*.scss": "stylelint --syntax=scss",
-    "{stories,src}/**/*.{ts,tsx,js}": [
+    "{stories,packages}/**/*.scss": "stylelint --syntax=scss",
+    "{stories,packages}/**/*.{ts,tsx,js}": [
       "eslint --fix",
       "git add"
     ]

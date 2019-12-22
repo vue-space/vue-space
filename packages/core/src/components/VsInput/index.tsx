@@ -1,44 +1,44 @@
-import { createComponent } from '@vue/composition-api';
-import { VNode } from 'vue';
-import { InputHTMLAttributes, FormEvent } from '../../types/dom';
+import { createComponent } from "@vue/composition-api";
+import { VNode } from "vue";
+import { InputHTMLAttributes, FormEvent } from "../../types/dom";
 
 import {
   ValidatableComponent,
   validatableComponentProps,
   computeValidation
-} from '../../utils/validatable';
+} from "../../utils/validatable";
 
-const classNamePrefix = 'vs-input';
+const classNamePrefix = "vs-input";
 
 interface VsInputProps extends InputHTMLAttributes, ValidatableComponent {
   /**
    * input type
    */
   type:
-    | 'text'
-    | 'password'
-    | 'email'
-    | 'number'
-    | 'url'
-    | 'tel'
-    | 'search'
-    | 'range'
-    | 'color'
-    | 'date'
-    | 'time'
-    | 'datetime'
-    | 'datetime-local'
-    | 'month'
-    | 'week';
+    | "text"
+    | "password"
+    | "email"
+    | "number"
+    | "url"
+    | "tel"
+    | "search"
+    | "range"
+    | "color"
+    | "date"
+    | "time"
+    | "datetime"
+    | "datetime-local"
+    | "month"
+    | "week";
 }
 
 const VsInput = createComponent<VsInputProps>({
   props: {
     value: {
-      default: ''
+      default: ""
     },
     type: {
-      default: 'text'
+      default: "text"
     },
     ...validatableComponentProps
   },
@@ -48,14 +48,14 @@ const VsInput = createComponent<VsInputProps>({
      * for v-model
      */
     function eventInput(event: FormEvent<InputHTMLAttributes>): void {
-      ctx.emit('input', event.currentTarget.value);
+      ctx.emit("input", event.currentTarget.value);
     }
 
     return (): VNode => {
       const { disabled, type, validateStatus, value } = props;
       const { prefix, suffix } = ctx.slots;
 
-      const isPassword = type === 'password';
+      const isPassword = type === "password";
 
       const {
         validationClassName,

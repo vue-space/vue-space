@@ -1,6 +1,8 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { InputHTMLAttributes, FormEvent } from "../../types/dom";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import VsCheckmark from "@vue-space/icons/dist/VsIconCheckmark";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import VsIcon from "../VsIcon";
@@ -43,10 +45,12 @@ const VsCheckbox = createComponent<VsCheckboxProps>({
           />
           <span class={`${classNamePrefix}__icon`}>
             <span class={`${classNamePrefix}__icon-inner`}>
-              <VsIcon name="checkmark" />
+              <VsCheckmark />
             </span>
           </span>
-          <span class={`${classNamePrefix}__label`}>{ctx.slots.default()}</span>
+          <span class={`${classNamePrefix}__label`}>
+            {ctx.slots.default?.()}
+          </span>
         </label>
       );
     };

@@ -1,0 +1,15 @@
+.#{$prefix}border-radius-none {
+  border-radius: 0;
+}
+
+.#{$prefix}border-radius-sm {
+  border-radius: $border-radius-sm;
+}
+
+.#{$prefix}border-radius-md {
+  border-radius: $border-radius-md;
+}
+
+.#{$prefix}border-radius-lg {
+  border-radius: $border-radius-lg;
+}

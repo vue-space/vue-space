@@ -1,26 +1,32 @@
-import VsButton from './components/VsButton';
-import VsThemeProvider from './components/VsThemeProvider';
-import VsCircularProgress from './components/VsCircularProgress';
-import VsInput from './components/VsInput';
-import VsIcon from './components/VsIcon';
-import VsForm from './components/VsForm';
-import VsSelect from './components/VsSelect';
-import VsFormItem from './components/VsFormItem';
-import VsRow from './components/VsRow';
-import VsCol from './components/VsCol';
-import VsCheckbox from './components/VsCheckbox';
-import VsRadio from './components/VsRadio';
-import VsRadioGroup from './components/VsRadioGroup';
-import VsBreadcrumb from './components/VsBreadcrumb';
-import VsAvatar from './components/VsAvatar';
-import VsMenu from './components/VsMenu';
-import VsMenuItem from './components/VsMenu/VsMenuItem';
-import VsTab from './components/VsTab';
-import VsTabItem from './components/VsTab/VsTabItem';
+import VsButton from "./components/VsButton";
+import VsThemeProvider from "./components/VsThemeProvider";
+import VsCircularProgress from "./components/VsCircularProgress";
+import VsInput from "./components/VsInput";
+import VsForm from "./components/VsForm";
+import VsSelect from "./components/VsSelect";
+import VsFormItem from "./components/VsFormItem";
+import VsRow from "./components/VsRow";
+import VsCol from "./components/VsCol";
+import VsCheckbox from "./components/VsCheckbox";
+import VsRadio from "./components/VsRadio";
+import VsRadioGroup from "./components/VsRadioGroup";
+import VsBreadcrumb from "./components/VsBreadcrumb";
+import VsAvatar from "./components/VsAvatar";
+import VsMenu from "./components/VsMenu";
+import VsMenuItem from "./components/VsMenu/VsMenuItem";
+import VsTab from "./components/VsTab";
+import VsTabItem from "./components/VsTab/VsTabItem";
+import VsPaper from "./components/VsPaper";
+import VsTable from "./components/VsTable";
+import VsTableBody from "./components/VsTable/VsTableBody";
+import VsTableCell from "./components/VsTable/VsTableCell";
+import VsTableHead from "./components/VsTable/VsTableHead";
+import VsTableRow from "./components/VsTable/VsTableRow";
 
-import VueCompositionApi from '@vue/composition-api';
+import VueCompositionApi from "@vue/composition-api";
 
-import { PluginFunction } from 'vue';
+import { PluginFunction } from "vue";
+
 const Components: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
@@ -29,7 +35,6 @@ const Components: {
   VsThemeProvider,
   VsCircularProgress,
   VsInput,
-  VsIcon,
   VsForm,
   VsFormItem,
   VsRow,
@@ -43,7 +48,13 @@ const Components: {
   VsMenu,
   VsMenuItem,
   VsTab,
-  VsTabItem
+  VsTabItem,
+  VsPaper,
+  VsTable,
+  VsTableBody,
+  VsTableCell,
+  VsTableHead,
+  VsTableRow
 };
 
 const install: PluginFunction<never> = function(Vue) {
@@ -56,7 +67,7 @@ const install: PluginFunction<never> = function(Vue) {
 
 const VueSpace = {
   install,
-  NAME: 'vue-space'
+  NAME: "vue-space"
 };
 
 export default VueSpace;

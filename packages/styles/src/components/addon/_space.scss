@@ -1,0 +1,49 @@
+.#{$prefix}padding-none {
+  padding: 0 !important;
+}
+
+.#{$prefix}no-padding-y {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.#{$prefix}no-padding-x {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.#{$prefix}padding-sm {
+  padding: $space-sm;
+}
+
+.#{$prefix}padding-md {
+  padding: $space-md;
+}
+
+.#{$prefix}padding-lg {
+  padding: $space-lg;
+}
+
+.#{$prefix}padding-xl {
+  padding: $space-xl;
+}
+
+.#{$prefix}margin-none {
+  margin: 0;
+}
+
+.#{$prefix}margin-sm {
+  margin: $space-sm;
+}
+
+.#{$prefix}margin-md {
+  margin: $space-md;
+}
+
+.#{$prefix}margin-lg {
+  margin: $space-lg;
+}
+
+.#{$prefix}margin-xl {
+  margin: $space-xl;
+}
