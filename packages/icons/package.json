@@ -9,7 +9,6 @@
     "raw"
   ],
   "scripts": {
-    "watch": "node ./build.js",
     "build": "node ./build.js"
   },
   "repository": {

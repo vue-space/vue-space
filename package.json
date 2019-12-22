@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "build": "lerna run build --parallel",
-    "dev": "lerna run watch --stream --parallel",
+    "build": "npm run build:icons && lerna bootstrap && npm run build:rest",
+    "build:icons": "lerna run build --scope=@vue-space/icons --stream --parallel",
+    "build:rest": "lerna run build --ignore=@vue-space/icons --stream --parallel",
+    "dev": "npm run build:icons && lerna bootstrap && lerna run watch --ignore=@vue-space/icons --stream --parallel",
     "bootstrap": "lerna bootstrap",
     "lint:fix": "eslint --fix ./{src,.storybook}/**/*.{tsx,ts,js}",
-    "release": "npm run bootstrap && npm run build && lerna publish",
+    "release": "npm run build && lerna publish --ignore=@vue-space/storybook",
     "commit": "git-cz",
     "commit:doc": "git-cz --no-verify",
     "lint-staged": "lint-staged -d"
