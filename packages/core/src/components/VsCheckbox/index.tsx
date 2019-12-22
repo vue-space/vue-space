@@ -4,9 +4,6 @@ import { InputHTMLAttributes, FormEvent } from "../../types/dom";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import VsCheckmark from "@vue-space/icons/dist/VsIconCheckmark";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import VsIcon from "../VsIcon";
-
 const classNamePrefix = "vs-checkbox";
 
 interface VsCheckboxProps extends Omit<InputHTMLAttributes, "type"> {}

@@ -2,7 +2,7 @@ import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { HTMLAttributes } from "../../types/dom";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import VsIcon from "../VsIcon";
+import VsIconPersonOutline from "@vue-space/icons/dist/VsIconPersonOutline";
 
 const classNamePrefix = "vs-avatar";
 
@@ -38,7 +38,7 @@ const VsAvatar = createComponent<VsAvatarProps>({
           {props.image ? (
             <img alt="" src={props.image} />
           ) : (
-            <VsIcon name="person-outline" />
+            <VsIconPersonOutline />
           )}
         </div>
       );
