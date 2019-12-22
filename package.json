@@ -7,7 +7,7 @@
     "dev": "lerna run watch --stream --parallel",
     "bootstrap": "lerna bootstrap",
     "lint:fix": "eslint --fix ./{src,.storybook}/**/*.{tsx,ts,js}",
-    "release": "npm run build && lerna publish",
+    "release": "npm run bootstrap && npm run build && lerna publish",
     "commit": "git-cz",
     "commit:doc": "git-cz --no-verify",
     "lint-staged": "lint-staged -d"
