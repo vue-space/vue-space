@@ -1,7 +1,9 @@
 import { AriaAttributes } from "../types/dom";
 import { VNode } from "vue";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import VsIcon from "../components/VsIcon";
+import VsIconClose from "@vue-space/icons/dist/VsIconClose";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import VsIconCheckmark from "@vue-space/icons/dist/VsIconCheckmark";
 
 export interface ValidatableComponent {
   /**
@@ -41,9 +43,9 @@ export const computeValidation: FormValidationFunction = (
     "aria-invalid": isValidateError
   };
   const validationIcon = isValidateError ? (
-    <VsIcon name="close" />
+    <VsIconClose />
   ) : isValidateSuccess ? (
-    <VsIcon name="checkmark" />
+    <VsIconCheckmark />
   ) : null;
   return {
     validationClassName,

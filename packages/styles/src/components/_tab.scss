@@ -44,12 +44,8 @@
     }
 
     i {
-      position: relative;
-      top: 2px;
       margin-right: $tab-icon-margin-right;
-      line-height: 0;
-
-      @extend .#{$prefix}text-icon;
+      color: $tab-logo-color;
     }
 
     .active-class,

@@ -2,7 +2,6 @@ import VsButton from "./components/VsButton";
 import VsThemeProvider from "./components/VsThemeProvider";
 import VsCircularProgress from "./components/VsCircularProgress";
 import VsInput from "./components/VsInput";
-import VsIcon from "./components/VsIcon";
 import VsForm from "./components/VsForm";
 import VsSelect from "./components/VsSelect";
 import VsFormItem from "./components/VsFormItem";
@@ -36,7 +35,6 @@ const Components: {
   VsThemeProvider,
   VsCircularProgress,
   VsInput,
-  VsIcon,
   VsForm,
   VsFormItem,
   VsRow,

@@ -50,7 +50,7 @@
     border-radius: $checkbox-inner-radius;
     opacity: 0;
 
-    i {
+    .#{$prefix}icon {
       @extend .#{$prefix}absolute-centered;
 
       color: $white;

@@ -30,13 +30,10 @@ const svgoConfig = {
     {
       addAttributesToSVGElement: {
         attribute: {
-          fill: 'currentColor'
+          fill: 'currentColor',
+          width: '1em',
+          height: '1em'
         }
-      }
-    },
-    {
-      addClassesToSVGElement: {
-        className: 'vs-icon'
       }
     }
   ]
@@ -60,7 +57,7 @@ async function buildAllSVG(prefix, inputDir, outputDir, typeRawDir) {
     const file = await fs.readFile(filePath);
     const optimizedSVG = await (await svgo.optimize(file)).data;
     const svgRender = compiler
-      .compile(optimizedSVG)
+      .compile(`<i aria-label="icon" class="vs-icon">${optimizedSVG}</i>`)
       .render.replace(/_/g, '_vm._');
 
     const fileBasename = path.basename(filePath, '.svg');
