@@ -1,14 +1,14 @@
 import { createComponent } from "@vue/composition-api";
 import { VNode } from "vue";
 import { InputHTMLAttributes, FormEvent } from "../../types/dom";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import VsIconArrowDown from "@vue-space/icons/dist/VsIconArrowDown";
 
 import {
   ValidatableComponent,
   validatableComponentProps,
   computeValidation
 } from "../../utils/validatable";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import VsIcon from "../VsIcon";
 
 const classNamePrefix = "vs-input";
 
@@ -71,7 +71,7 @@ const VsInput = createComponent<VsSelectProps>({
       );
       const suffixElement = (
         <span class={`${classNamePrefix}__suffix`}>
-          <VsIcon name="arrow-down" />
+          <VsIconArrowDown />
           {suffix && suffix()}
           {validationIcon}
         </span>

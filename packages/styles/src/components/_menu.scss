@@ -27,7 +27,7 @@
         color: $menu-item-color--active;
         background: $menu-item-background--hover;
 
-        i {
+        .#{$prefix}icon {
           color: $menu-item-color--active;
         }
 
@@ -69,13 +69,9 @@
       margin: $menu-caption-margin;
     }
 
-    i {
-      position: relative;
-      top: 2px;
+    .#{$prefix}icon {
       margin-right: $menu-icon-margin-right;
-      line-height: 0;
-
-      @extend .#{$prefix}text-icon;
+      color: $menu-logo-color;
     }
 
     .active-class,
@@ -83,7 +79,7 @@
       color: $menu-item-color--active;
       background-color: $menu-item-background--active;
 
-      i {
+      .#{$prefix}icon {
         color: $menu-item-color--active;
       }
 
