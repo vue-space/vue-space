@@ -24,7 +24,7 @@ const svgoConfig = {
       removeXMLNS: true
     },
     {
-      removeAttrs: { attrs: '(stroke|fill)' }
+      removeAttrs: { attrs: '(stroke|fill|class)' }
     },
     { removeStyleElement: true },
     {
