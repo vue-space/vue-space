@@ -9,6 +9,9 @@
     "dist",
     "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "watch": "rollup -cw ./rollup.config.js",
     "build": "tsc --build && rollup -c ./rollup.config.js"

@@ -5,6 +5,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "watch": "start-storybook -p 6006 --quiet",
     "build": "build-storybook --quiet"

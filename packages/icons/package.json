@@ -8,6 +8,9 @@
     "dist",
     "raw"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "node ./build.js"
   },
