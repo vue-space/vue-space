@@ -1,11 +1,11 @@
 {
-  "packages": [
-    "packages/*",
-    "storybook"
-  ],
+  "packages": ["packages/*", "storybook"],
   "version": "0.0.1-alpha.1",
   "npmClient": "yarn",
-  "publishConfig": {
-    "access": "public"
+  "command": {
+    "publish": {
+      "ignoreChanges": ["ignored-file", "*.md"],
+      "message": "chore(release): publish"
+    }
   }
 }
