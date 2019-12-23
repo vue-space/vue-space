@@ -9,7 +9,7 @@
     "dev": "npm run build:icons && lerna bootstrap && lerna run watch --ignore=@vue-space/icons --stream --parallel",
     "bootstrap": "lerna bootstrap",
     "lint:fix": "eslint --fix ./{src,.storybook}/**/*.{tsx,ts,js}",
-    "release": "npm run build && lerna publish --ignore=@vue-space/storybook",
+    "release": "npm run build && lerna publish",
     "commit": "git-cz",
     "commit:doc": "git-cz --no-verify",
     "lint-staged": "lint-staged -d"
