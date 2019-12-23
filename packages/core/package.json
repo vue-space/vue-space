@@ -1,6 +1,6 @@
 {
   "name": "@vue-space/core",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "",
   "main": "dist/vue-space.common.js",
   "web": "dist/vue-space.js",
@@ -30,7 +30,7 @@
     "url": "https://github.com/vue-space/vue-space/issues"
   },
   "dependencies": {
-    "@vue-space/icons": "^0.0.1-alpha.1",
+    "@vue-space/icons": "^0.0.1-alpha.2",
     "@vue/composition-api": "^0.3.4",
     "vue": "^2.6.10",
     "vue-functional-data-merge": "^3.1.0"
