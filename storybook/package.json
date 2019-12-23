@@ -2,9 +2,6 @@
   "name": "@vue-space/storybook",
   "version": "0.0.1-alpha.1",
   "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "watch": "start-storybook -p 6006 --quiet",
     "build": "build-storybook --quiet"
