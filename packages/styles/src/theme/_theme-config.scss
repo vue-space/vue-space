@@ -307,3 +307,18 @@ $paper-background:                    $white !default;
 $table-cell-padding:                  $space-md !default;
 $table-cell-border:                   1px solid map-get($gray-color-list, "3");
 $table-head-cell-border:              2px solid map-get($gray-color-list, "3");
+
+/* Pagination
+   ========================================================================== */
+
+$pagination-font-color-level:              "9";
+$pagination-font-color:                    map_get($primary-color-list, $pagination-font-color-level);
+$pagination-font-color-level--hover:       "7";
+$pagination-font-color--hover:             map_get($primary-color-list, $pagination-font-color-level--hover);
+$pagination-page-background-level--hover:  "1";
+$pagination-page-background--hover:        map_get($primary-color-list, $pagination-page-background-level--hover);
+$pagination-page-background-level--active: "5";
+$pagination-page-background--active:       map_get($primary-color-list, $pagination-page-background-level--active);
+$pagination-page-margin-between:           $space-sm / 2;
+$pagination-page-padding:                  $space-sm $space-sm + 2px;
+$pagination-page-border-radius:            $border-radius-sm;
