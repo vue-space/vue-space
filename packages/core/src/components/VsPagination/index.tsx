@@ -108,7 +108,7 @@ const VsPagination = createComponent<VsPaginationProps>({
                 [`${paginationClassPrefix}__page`]: true,
                 "--active": Number(page) === totalPage
               }}
-              onChange={(): void => handleChange(totalPage, size, totalPage)}
+              onClick={(): void => handleChange(totalPage, size, totalPage)}
             >
               {totalPage}
             </span>
