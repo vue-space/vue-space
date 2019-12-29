@@ -23,6 +23,7 @@ import VsTableCell from "./components/VsTable/VsTableCell";
 import VsTableHead from "./components/VsTable/VsTableHead";
 import VsTableRow from "./components/VsTable/VsTableRow";
 import VsPagination from "./components/VsPagination";
+import VsToastNotification from "./components/VsToastNotification";
 
 import VueCompositionApi from "@vue/composition-api";
 
@@ -56,7 +57,8 @@ const Components: {
   VsTableCell,
   VsTableHead,
   VsTableRow,
-  VsPagination
+  VsPagination,
+  VsToastNotification
 };
 
 const install: PluginFunction<never> = function(Vue) {
