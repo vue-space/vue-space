@@ -22,6 +22,7 @@ import VsTableBody from "./components/VsTable/VsTableBody";
 import VsTableCell from "./components/VsTable/VsTableCell";
 import VsTableHead from "./components/VsTable/VsTableHead";
 import VsTableRow from "./components/VsTable/VsTableRow";
+import VsPagination from "./components/VsPagination";
 
 import VueCompositionApi from "@vue/composition-api";
 
@@ -54,7 +55,8 @@ const Components: {
   VsTableBody,
   VsTableCell,
   VsTableHead,
-  VsTableRow
+  VsTableRow,
+  VsPagination
 };
 
 const install: PluginFunction<never> = function(Vue) {
